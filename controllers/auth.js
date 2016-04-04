@@ -12,17 +12,18 @@ router.post('/signup', function(req, res) {
       email: req.body.email
     },
     defaults: {
-      name: req.body.name,
+      username: req.body.username,
       password: req.body.password
     }
   }).spread(function(user, created) {
     if (created) {
       res.redirect('/');
+      req.session.userId = user.id;
     } else {
-      res.redirect('/auth/signup');
+      res.redirect('/signup');
     }
   }).catch(function(err) {
-    res.redirect('/auth/signup');
+    res.redirect('/signup');
   });
 });
 
@@ -36,12 +37,12 @@ router.post('/login', function(req, res) {
 
   db.user.authenticate(email, password, function(err, user) {
     if(err) {
-      res.redirect('/auth/login');
+      res.redirect('/login');
     } else if (user) {
       req.session.userId = user.id;
       res.redirect('/');
     } else {
-      res.redirect('/auth/login');
+      res.redirect('/login');
     }
   });
 });
