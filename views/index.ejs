@@ -1,1 +1,26 @@
 <h1>Welcome to AngioBloom</h1>
+<h2>The best place on the internet to share flowers...</h2>
+
+<% flowers.forEach(function(flower){ %>
+  <% var imgUrl = cloudinary.url(flower.flowerPhotos[0].picture )%>
+  <% if (flower.name !== '') { %>
+    <div>
+      <h3><%= flower.name %></h3>
+      <img src="<%= imgUrl %>" class="mainFlower">
+    </div>
+  <% } %> 
+<% }) %>
+  
+
+<h2>Can you identify these flowers?</h2>
+
+<% flowers.forEach(function(flower){ %>
+  <% if (flower.name == '') { %>
+    <% for(var i = 0; i < flower.flowerPhotos.length; i++) { %>
+      <% var imgUrl = cloudinary.url(flower.flowerPhotos[i].picture)%>
+        <div>
+          <img src="<%= imgUrl %>" class="mainFlower">
+        </div>
+      <% } %> 
+  <% } %>
+<% }) %>

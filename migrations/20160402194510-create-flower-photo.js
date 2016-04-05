@@ -1,17 +1,17 @@
 'use strict';
 module.exports = {
   up: function(queryInterface, Sequelize) {
-    return queryInterface.createTable('flower_photos', {
+    return queryInterface.createTable('flowerPhotos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userID: {
+      userId: {
         type: Sequelize.INTEGER
       },
-      flower_taxonomyID: {
+      flowerTaxonomyId: {
         type: Sequelize.INTEGER
       },
       picture: {
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('flower_photos');
+    return queryInterface.dropTable('flowerPhotos');
   }
 };

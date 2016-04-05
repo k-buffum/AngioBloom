@@ -2,8 +2,13 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var session = require('express-session');
+var multer = require('multer');
+var cloudinary = require('cloudinary');
 var db = require('./models');
 var app = express();
+var upload = multer({ dest: './uploads/' });
+
+var images = [];
 
 app.set('view engine', 'ejs');
 
@@ -31,7 +36,12 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function(req, res) {
-  res.render('index');
+  db.flowerTaxonomy.findAll({
+    include: [db.flowerPhoto]
+  }).then(function(flowers) {
+    console.log(flowers);
+    res.render('index', {flowers: flowers, cloudinary});  
+  });
 });
 
 app.use('/', require('./controllers/auth'));

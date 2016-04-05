@@ -12,6 +12,16 @@ body {
 UPLOAD PAGE
 ******************************/
 
+.mainFlower {
+  max-width: 450px;
+}
+
+
+
+/*****************************
+UPLOAD PAGE
+******************************/
+
 #imgPreview img {
   width: 500px;
 }

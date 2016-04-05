@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: function(queryInterface, Sequelize) {
-    return queryInterface.createTable('flower_taxonomies', {
+    return queryInterface.createTable('flowerTaxonomies', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -32,23 +32,29 @@ module.exports = {
       terrain: {
         type: Sequelize.TEXT
       },
-      humidity: {
-        type: Sequelize.FLOAT
+      lowHumidity: {
+        type: Sequelize.TEXT
       },
-      sunlight_intensity: {
+      highHumidity: {
+        type: Sequelize.TEXT
+      },
+      sunlightIntensity: {
+        type: Sequelize.TEXT
+      },
+      sunlightFrequency: {
+        type: Sequelize.TEXT
+      },
+      waterIntensity: {
+        type: Sequelize.TEXT
+      },
+      waterFrequency: {
+        type: Sequelize.TEXT
+      },
+      flowerPhotoId: {
         type: Sequelize.INTEGER
       },
-      sunlight_frequency: {
-        type: Sequelize.INTEGER
-      },
-      water_intensity: {
-        type: Sequelize.INTEGER
-      },
-      water_frequency: {
-        type: Sequelize.INTEGER
-      },
-      flower_photoID: {
-        type: Sequelize.INTEGER
+      location: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -61,6 +67,6 @@ module.exports = {
     });
   },
   down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('flower_taxonomies');
+    return queryInterface.dropTable('flowerTaxonomies');
   }
 };

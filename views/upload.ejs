@@ -1,9 +1,9 @@
 <h1>Share a Flower</h1>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
   <div>
     <div id="imgPreview"> </div>
-    <input type="file" enctype="multipart/form-data" accept="image/*" id="imgUpload">
+    <input type="file" accept="image/*" id="imgUpload" name="imgUpload">
   </div>
 
   <div>
@@ -13,7 +13,7 @@
   
   <div>
     <label for="location">Where was this photo taken?</label>
-    <input type="text" name"location">
+    <input type="text" name="location">
   </div>
 
   <label for="classification">Do you know this flower's scientific classification?</label>
@@ -44,7 +44,7 @@
 
   <div>
     <label for="terrain">What terrain does this flower like?</label>
-    <select>
+    <select name="terrain">
       <option value="foo">foo</option>
       <option value="bar">bar</option>
       <option value="baz">baz</option>
@@ -57,30 +57,30 @@
 
   <label for"sunlightIntensity">What intensity of sunlight does this flower prefer?</label>
   <div>
-    <button name="lowIntensity">Low Intensity</button>
-    <button name="moderateIntensity">Moderate Intensity</button>
-    <button name="highIntensity">High Intensity</button>
+    <input type="radio" name="sunlightIntensity" value="lowIntensity">Low Intensity</button>
+    <input type="radio" name="sunlightIntensity" value="moderateIntensity">Moderate Intensity</button>
+    <input type="radio" name="sunlightIntensity" value="highIntensity">High Intensity</button>
   </div>
 
   <label for"sunlightFrequency">With what frequency does this flower need sunlight?</label>
   <div>
-    <button name="infrequentSun">Infrequent</button>
-    <button name="regularSun">Regular</button>
-    <button name="frequentSun">Frequent</button>
+    <input type="radio" name="sunlightFrequency" value="infrequentSun">Infrequent</button>
+    <input type="radio" name="sunlightFrequency" value="regularSun">Regular</button>
+    <input type="radio" name="sunlightFrequency" value="frequentSun">Frequent</button>
   </div>
 
   <label for"waterAmount">How much water does this flower need?</label>
   <div>
-    <button name="smallAmount">Small Amount</button>
-    <button name="moderateAmount">Moderate Amount</button>
-    <button name="highAmount">High Amount</button>
+    <input type="radio" name="waterIntensity" value="smallAmount">Small Amount</button>
+    <input type="radio" name="waterIntensity" value="moderateAmount">Moderate Amount</button>
+    <input type="radio" name="waterIntensity" value="highAmount">High Amount</button>
   </div>
 
   <label for"waterFrequency">With what frequency does this flower need water?</label>
   <div>
-    <button name="infrequentWater">Infrequent</button>
-    <button name="regularWater">Regular</button>
-    <button name="frequentWater">Frequent</button>
+    <input type="radio" name="waterFrequency" value="infrequentWater">Infrequent</button>
+    <input type="radio" name="waterFrequency" value="regularWater">Regular</button>
+    <input type="radio" name="waterFrequency" value="frequentWater">Frequent</button>
   </div>
 
   <label for="temp">What is this flower's preferred temperature(&#8457;) range?</label>

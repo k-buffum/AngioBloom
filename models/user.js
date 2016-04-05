@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-        models.user.hasMany(models.flower_photo);
+        models.user.hasMany(models.flowerPhoto);
       },
       authenticate: function(email, password, callback) {
         this.find({
