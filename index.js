@@ -22,6 +22,9 @@ app.use(session({
 }));
 
 app.use(function(req, res, next) {
+  //remove later
+  req.session.userId = 1;
+
   if(req.session.userId) {
     db.user.findById(req.session.userId).then(function(user) {
       req.currentUser = user;
@@ -39,8 +42,19 @@ app.get('/', function(req, res) {
   db.flowerTaxonomy.findAll({
     include: [db.flowerPhoto]
   }).then(function(flowers) {
-    console.log(flowers);
     res.render('index', {flowers: flowers, cloudinary});  
+  });
+});
+
+app.get('/myaccount', function(req, res) {
+  db.flowerPhoto.findAll({
+    where: {
+      userId: res.locals.currentUser.id
+    },
+    include: [db.user]
+  }).then(function(photos) {
+    // res.send(photos);
+    res.render('myAccount', {photos: photos, cloudinary});
   });
 });
 

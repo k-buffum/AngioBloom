@@ -1,0 +1,32 @@
+<h1><%= flower.name %> (<%= flower.scientificName %>)</h1>
+<img src="<%= cloudinary.url(flower.flowerPhotos[0].picture) %>" id="mainTaxonomyPic">
+
+<div>
+  <div>
+    <h2>Order: </h2>
+    <h2><%= flower.order %></h2>
+  </div>
+  <div>
+    <h2>Family: </h2>
+    <h2><%= flower.family %></h2>
+  </div>
+  <div>
+    <h2>Genus: </h2>
+    <h2><%= flower.genus %></h2>
+  </div>
+</div>
+
+<h3>Prefers <%= flower.sunlightIntensity %> intensity of <%= flower.sunlightFrequency %> sunlight.</h3>
+
+<h3>Prefers <%= flower.waterIntensity %> amount of <%= flower.waterFrequency %> watering.</h3>
+
+
+
+<% for(var i = 0; i < photos.length; i++) { %>
+  <% var imgUrl = cloudinary.url(photos[i].picture) %>
+  <div>
+    <img src="<%= imgUrl %>" class="secondaryTaxonomyPic">
+    <%=  %>
+    <h3><%= photos[i].likes ? photos[i].likes : "0" %> Likes -<%= photos[i].user ? photos[i].user.points : "No user" %> points - <%= photos[i].user ? photos[i].user.username : "No user!" %></h3>
+  </div>
+<% } %>

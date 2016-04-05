@@ -25,14 +25,14 @@ router.post('/upload', upload.single('imgUpload'), function(req, res) {
       name: req.body.flowerType
     },
     defaults: {
-      location: req.body.location,
-      scientificName: req.body.scientificName,
-      genus: req.body.genus,
-      order: req.body.order,
-      family: req.body.family,
+      location: req.body.location.toLowerCase(),
+      scientificName: req.body.scientificName.toLowerCase(),
+      genus: req.body.genus.toLowerCase(),
+      order: req.body.order.toLowerCase(),
+      family: req.body.family.toLowerCase(),
       lowTemperature: parseFloat(req.body.lowTemp),
       highTemperature: parseFloat(req.body.highTemp),
-      terrain: req.body.terrain,
+      terrain: req.body.terrain.toLowerCase(),
       lowHumidity: req.body.lowHumidity,
       highHumidity: req.body.highHumidity,
       sunlightIntensity: req.body.sunlightIntensity,
@@ -46,7 +46,7 @@ router.post('/upload', upload.single('imgUpload'), function(req, res) {
         userId: userId,
         flowerTaxonomyId: flower.id,
         picture: result.public_id,
-        location: req.body.location
+        location: req.body.location.toLowerCase()
       })
       .then(function(picture) {
         flower.flowerPhotoId = picture.id;
@@ -56,7 +56,40 @@ router.post('/upload', upload.single('imgUpload'), function(req, res) {
       })
     });  
   });
+});
 
+router.get('/all', function(req, res) {
+  var userId = res.locals.currentUser.id;
+  db.flowerTaxonomy.findAll({
+    include: [db.flowerPhoto]
+  }).then(function(flowers) {
+    res.render('all', {flowers: flowers, cloudinary});
+  });
+});
+
+router.get('/:name', function(req, res) {
+  var userId = res.locals.currentUser.id;
+  db.flowerTaxonomy.find({
+    where: {
+      name: req.params.name
+    },
+    include: [db.flowerPhoto]
+  }).then(function(flower) {
+    db.flowerPhoto.findAll({
+      where: {
+        flowerTaxonomyId: flower.id
+      },
+      include: [db.user, db.flowerTaxonomy]
+    }).then(function(photos) {
+      res.render('taxonomy', {flower: flower, photos: photos, cloudinary});
+    });
+  });
 });
 
 module.exports = router;
+
+
+
+
+
+

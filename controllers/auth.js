@@ -17,9 +17,11 @@ router.post('/signup', function(req, res) {
     }
   }).spread(function(user, created) {
     if (created) {
+      console.log('Signup success');
       res.redirect('/');
       req.session.userId = user.id;
     } else {
+      console.log('Signup failed');
       res.redirect('/signup');
     }
   }).catch(function(err) {
@@ -39,9 +41,11 @@ router.post('/login', function(req, res) {
     if(err) {
       res.redirect('/login');
     } else if (user) {
+      console.log("Login success");
       req.session.userId = user.id;
       res.redirect('/');
     } else {
+      console.log("Login failed");
       res.redirect('/login');
     }
   });

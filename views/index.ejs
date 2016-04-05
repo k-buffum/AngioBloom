@@ -5,12 +5,14 @@
   <% var imgUrl = cloudinary.url(flower.flowerPhotos[0].picture )%>
   <% if (flower.name !== '') { %>
     <div>
-      <h3><%= flower.name %></h3>
-      <img src="<%= imgUrl %>" class="mainFlower">
+      <a href="/flower/<%= flower.name %>">
+        <h3><%= flower.name %></h3>
+        <img src="<%= imgUrl %>" class="mainFlower">
+      </a>
     </div>
   <% } %> 
 <% }) %>
-  
+<button><a href="/flower/all">View All Flowers</a></button> 
 
 <h2>Can you identify these flowers?</h2>
 

@@ -9,10 +9,24 @@ body {
 
 
 /*****************************
-UPLOAD PAGE
+HOME PAGE
 ******************************/
 
 .mainFlower {
+  max-width: 450px;
+}
+
+
+
+/*****************************
+TAXONOMY PAGE
+******************************/
+
+#mainTaxonomyPic {
+  max-width: 500px;
+}
+
+.secondaryTaxonomyPic {
   max-width: 450px;
 }
 
