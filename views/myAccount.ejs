@@ -5,6 +5,10 @@
 
 <h2>My Flowers:</h2>
 
-for(var i = 0; i < photos.length; i++) {
-  var imgUrl = cloudinary.url(photos[i].picture)
-}
+<% for(var i = 0; i < photos.length; i++) { %>
+  <% var imgUrl = cloudinary.url(photos[i].picture) %>
+  <div>
+    <img src="<%= imgUrl %>" class="myPhoto">
+    <h3><%= photos[i].flowerTaxonomy.name ? photos[i].flowerTaxonomy.name : "Unknown" %></h3>
+  </div>
+<% } %>

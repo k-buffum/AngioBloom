@@ -1,9 +1,11 @@
 var express = require('express');
+var flash = require('connect-flash');
 var db = require('../models');
 var router = express.Router();
+router.use(flash());
 
 router.get('/signup', function(req, res) {
-  res.render('auth/signup');
+  res.render('auth/signup', {alerts: req.flash()});
 });
 
 router.post('/signup', function(req, res) {
@@ -17,11 +19,11 @@ router.post('/signup', function(req, res) {
     }
   }).spread(function(user, created) {
     if (created) {
-      console.log('Signup success');
+      req.flash("success", "Account created.")
       res.redirect('/');
       req.session.userId = user.id;
     } else {
-      console.log('Signup failed');
+      req.flash("danger", "Email already in use, try again.")
       res.redirect('/signup');
     }
   }).catch(function(err) {
@@ -30,7 +32,7 @@ router.post('/signup', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
-  res.render('auth/login');
+  res.render('auth/login', {alerts: req.flash()});
 });
 
 router.post('/login', function(req, res) {
@@ -39,13 +41,14 @@ router.post('/login', function(req, res) {
 
   db.user.authenticate(email, password, function(err, user) {
     if(err) {
+
       res.redirect('/login');
     } else if (user) {
-      console.log("Login success");
       req.session.userId = user.id;
+      req.flash("success", "Login sucessful.")
       res.redirect('/');
     } else {
-      console.log("Login failed");
+      req.flash("danger", "Username and/ or password incorrect.")
       res.redirect('/login');
     }
   });
@@ -53,6 +56,7 @@ router.post('/login', function(req, res) {
 
 router.get('/logout', function(req, res) {
   req.session.userId = false;
+  req.flash("danger", "Logout successful.")
   res.redirect('/');
 });
 

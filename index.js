@@ -4,6 +4,7 @@ var ejsLayouts = require('express-ejs-layouts');
 var session = require('express-session');
 var multer = require('multer');
 var cloudinary = require('cloudinary');
+var flash = require('connect-flash');
 var db = require('./models');
 var app = express();
 var upload = multer({ dest: './uploads/' });
@@ -12,6 +13,7 @@ var images = [];
 
 app.set('view engine', 'ejs');
 
+app.use(flash());
 app.use(ejsLayouts);
 app.use(express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -42,7 +44,7 @@ app.get('/', function(req, res) {
   db.flowerTaxonomy.findAll({
     include: [db.flowerPhoto]
   }).then(function(flowers) {
-    res.render('index', {flowers: flowers, cloudinary});  
+    res.render('index', {flowers: flowers, cloudinary ,alerts: req.flash()});  
   });
 });
 
@@ -51,7 +53,7 @@ app.get('/myaccount', function(req, res) {
     where: {
       userId: res.locals.currentUser.id
     },
-    include: [db.user]
+    include: [db.user, db.flowerTaxonomy]
   }).then(function(photos) {
     // res.send(photos);
     res.render('myAccount', {photos: photos, cloudinary});

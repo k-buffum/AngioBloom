@@ -4,7 +4,10 @@ module.exports = function(sequelize, DataTypes) {
     userId: DataTypes.INTEGER,
     flowerTaxonomyId: DataTypes.INTEGER,
     picture: DataTypes.TEXT,
-    likes: DataTypes.INTEGER,
+    likes: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    },
     location: DataTypes.STRING
   }, {
     classMethods: {

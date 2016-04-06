@@ -27,6 +27,11 @@
   <div>
     <img src="<%= imgUrl %>" class="secondaryTaxonomyPic">
     <%=  %>
-    <h3><%= photos[i].likes ? photos[i].likes : "0" %> Likes -<%= photos[i].user ? photos[i].user.points : "No user" %> points - <%= photos[i].user ? photos[i].user.username : "No user!" %></h3>
+    <h3>
+      <%= photos[i].likes ? photos[i].likes : "0" %>
+        <a href="/flower/<%= photos[i].id %>/like" class="likeBtn"><i class="fa fa-heart"></i></a>
+      - <%= photos[i].user ? photos[i].user.points : "No user" %> points
+      - <%= photos[i].user ? photos[i].user.username : "No user!" %>
+    </h3>
   </div>
 <% } %>

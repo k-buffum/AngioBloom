@@ -9,12 +9,11 @@ var images = [];
 
 router.get('/upload', function(req, res) {
   var userId = res.locals.currentUser.id;
-
-  // if (res.locals.currentUser) {
-    res.render('upload');
-  // } else {
-    // alert("You need to be logged in to access this page");
-  // }
+  if (res.locals.currentUser) {
+    res.render('upload', {alerts: req.flash()});
+  } else {
+    req.flash("danger", "You need to be logged in to access this page");
+  }
 });
 
 router.post('/upload', upload.single('imgUpload'), function(req, res) {
@@ -64,6 +63,27 @@ router.get('/all', function(req, res) {
     include: [db.flowerPhoto]
   }).then(function(flowers) {
     res.render('all', {flowers: flowers, cloudinary});
+  });
+});
+
+router.post('/:id/like', function(req, res) {
+  db.flowerPhoto.find({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(photo) {
+    if(photo.likes == "null") {
+      photo.updateAttributes({
+        likes: 1
+      });
+      res.sendStatus(200)
+    } else {
+      var likeval = photo.likes
+      photo.updateAttributes({
+        likes: likeval + 1
+      });
+      res.sendStatus(200)
+    }
   });
 });
 
