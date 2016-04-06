@@ -55,7 +55,6 @@ app.get('/myaccount', function(req, res) {
     },
     include: [db.user, db.flowerTaxonomy]
   }).then(function(photos) {
-    // res.send(photos);
     res.render('myAccount', {photos: photos, cloudinary});
   });
 });

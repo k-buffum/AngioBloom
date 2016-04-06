@@ -1,19 +1,12 @@
-<h1>Share a Flower</h1>
+<h1>Can you identify this flower?</h1>
 
-<form method="POST" enctype="multipart/form-data">
-  <div>
-    <div id="imgPreview"> </div>
-    <input type="file" accept="image/*" id="imgUpload" name="imgUpload">
-  </div>
+<img src="<%= cloudinary.url(photo.picture) %>" class="mainFlower">
 
+<form method="POST">
+  
   <div>
     <label for="flowerType">What type of flower is this?</label>
     <input type="text" name="flowerType">
-  </div>
-  
-  <div>
-    <label for="location">Where was this photo taken?</label>
-    <input type="text" name="location" placeholder="City, State">
   </div>
 
   <label for="classification">Do you know this flower's scientific classification?</label>
@@ -60,7 +53,6 @@
       <option value="tundra">tundra</option>
     </select>
   </div>
-
 
   <label for"sunlightIntensity">What intensity of sunlight does this flower prefer?</label>
   <div>

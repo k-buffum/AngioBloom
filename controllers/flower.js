@@ -66,6 +66,58 @@ router.get('/all', function(req, res) {
   });
 });
 
+router.get('/unknown/:id', function(req, res) {
+  db.flowerPhoto.find({
+    where: {
+      id: req.params.id
+    },
+    include: [db.flowerTaxonomy]
+  }).then(function(photo) {
+    // res.send(photo)
+    res.render('unknown', {photo: photo, cloudinary});
+  });
+});
+
+router.post('/unknown/:id', function(req, res) {
+  var userId = res.locals.currentUser.id;
+  if (res.locals.currentUser) {
+    db.flowerTaxonomy.findOrCreate({
+      where: {
+      name: req.body.flowerType
+    },
+    defaults: {
+      scientificName: req.body.scientificName,
+      genus: req.body.genus.toLowerCase(),
+      order: req.body.order.toLowerCase(),
+      family: req.body.family.toLowerCase(),
+      lowTemperature: parseFloat(req.body.lowTemp),
+      highTemperature: parseFloat(req.body.highTemp),
+      terrain: req.body.terrain.toLowerCase(),
+      lowHumidity: req.body.lowHumidity,
+      highHumidity: req.body.highHumidity,
+      sunlightIntensity: req.body.sunlightIntensity,
+      sunlightFrequency: req.body.sunlightFrequency,
+      waterIntensity: req.body.waterIntensity,
+      waterFrequency: req.body.waterFrequency
+    } 
+    }).spread(function(flower, created) {
+      db.flowerPhoto.find({
+        where: {
+          id: req.params.id
+        }
+      }).then(function(photo) {
+        photo.updateAttributes({
+          flowerTaxonomyId: flower.id
+        }).then(function() {
+          res.redirect("/");
+        });
+      });
+    });
+  } else {
+    req.flash("danger", "You need to be logged in to classify a flower");
+  }
+});
+
 router.post('/:id/like', function(req, res) {
   db.flowerPhoto.find({
     where: {

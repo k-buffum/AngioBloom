@@ -21,7 +21,7 @@
     <% for(var i = 0; i < flower.flowerPhotos.length; i++) { %>
       <% var imgUrl = cloudinary.url(flower.flowerPhotos[i].picture)%>
         <div>
-          <img src="<%= imgUrl %>" class="mainFlower">
+          <a href="/flower/unknown/<%= flower.flowerPhotos[i].id %>"><img src="<%= imgUrl %>" class="mainFlower unknownFlower"></a>
         </div>
       <% } %> 
   <% } %>
