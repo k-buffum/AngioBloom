@@ -25,7 +25,7 @@ app.use(session({
 
 app.use(function(req, res, next) {
   //remove later
-  req.session.userId = 1;
+  // req.session.userId = 1;
 
   if(req.session.userId) {
     db.user.findById(req.session.userId).then(function(user) {
@@ -62,3 +62,7 @@ app.get('/myaccount', function(req, res) {
 app.use('/', require('./controllers/auth'));
 app.use('/flower', require('./controllers/flower'));
 app.listen(process.env.PORT || 3000);
+
+
+
+
