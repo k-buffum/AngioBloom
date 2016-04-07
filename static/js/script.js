@@ -1,6 +1,23 @@
 $(document).ready(function() {
 
-  $('#imgUpload').on('change', function() {
+  $(".cross").hide();
+  $(".menu").hide();
+  $(".hamburger").click(function() {
+    $(".menu").slideToggle( "slow", function() {
+      $(".hamburger").hide();
+      $(".cross").show();
+    });
+  });
+
+  $(".cross").click(function() {
+    $(".menu").slideToggle( "slow", function() {
+      $(".cross").hide();
+      $(".hamburger").show();
+    });
+  });
+
+
+  $("#imgUpload").on("change", function() {
     if(typeof (FileReader) != "undefined") {
       var imgPreview = $('#imgPreview');
       imgPreview.empty();

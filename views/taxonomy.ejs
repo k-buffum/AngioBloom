@@ -2,24 +2,53 @@
 <img src="<%= cloudinary.url(flower.flowerPhotos[0].picture) %>" id="mainTaxonomyPic">
 
 <div>
-  <div>
-    <h2>Order: </h2>
-    <h2><%= flower.order %></h2>
-  </div>
-  <div>
-    <h2>Family: </h2>
-    <h2><%= flower.family %></h2>
-  </div>
-  <div>
-    <h2>Genus: </h2>
-    <h2><%= flower.genus %></h2>
-  </div>
+  <% if (flower.order) { %>
+    <div>
+      <h2>Order: </h2>
+      <h2><%= flower.order %></h2>
+    </div>
+  <% } %>
+
+  <% if (flower.family) { %>
+    <div>
+      <h2>Family: </h2>
+      <h2><%= flower.family %></h2>
+    </div>
+  <% } %>
+
+  <% if (flower.genus) { %>
+    <div>
+      <h2>Genus: </h2>
+      <h2><%= flower.genus %></h2>
+    </div>
+  <% } %>
 </div>
 
-<h3>Prefers <%= flower.sunlightIntensity %> intensity of <%= flower.sunlightFrequency %> sunlight.</h3>
+<% if (flower.lowTemperature && flower.highTemperature) { %>
+  <h3>Temperature: <%= flower.lowTemperature %> - <%= flower.highTemperature %></h3>
+<% } %>
 
-<h3>Prefers <%= flower.waterIntensity %> amount of <%= flower.waterFrequency %> watering.</h3>
+<% if (flower.lowHumidity && flower.highHumidity) { %>
+  <h3>Humidity: <%= flower.lowHumidity %> - <%= flower.highHumidity %></h3>
+<% } %>
 
+<% if (flower.sunlightIntensity && flower.sunlightFrequency) { %>
+  <h3>Prefers <%= flower.sunlightIntensity %> intensity of <%= flower.sunlightFrequency %> sunlight.</h3>
+<% } %>
+
+<% if (flower.waterIntensity && flower.waterFrequency) { %>
+  <h3>Prefers <%= flower.waterIntensity %> amount of <%= flower.waterFrequency %> watering.</h3>
+<% } %>
+
+<% if (flower.terrain) { %>
+  <h3>Terrain: <%= flower.terrain %></h3>
+<% } %>
+
+<% photos.forEach(function(flower) { %>
+  <% if (flower.terrain) { %>
+    <%= flower.terrain %>
+  <% } %>
+<% }) %>
 
 
 <% for(var i = 0; i < photos.length; i++) { %>

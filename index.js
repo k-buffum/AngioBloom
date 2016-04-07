@@ -44,19 +44,25 @@ app.get('/', function(req, res) {
   db.flowerTaxonomy.findAll({
     include: [db.flowerPhoto]
   }).then(function(flowers) {
-    res.render('index', {flowers: flowers, cloudinary ,alerts: req.flash()});  
+    res.render('index', {flowers: flowers, cloudinary, alerts: req.flash()});  
   });
 });
 
 app.get('/myaccount', function(req, res) {
-  db.flowerPhoto.findAll({
-    where: {
-      userId: res.locals.currentUser.id
-    },
-    include: [db.user, db.flowerTaxonomy]
-  }).then(function(photos) {
-    res.render('myAccount', {photos: photos, cloudinary});
-  });
+  var userId = res.locals.currentUser.id;
+  if (res.locals.currentUser) {
+    db.flowerPhoto.findAll({
+      where: {
+        userId: res.locals.currentUser.id
+      },
+      include: [db.user, db.flowerTaxonomy]
+    }).then(function(photos) {
+      res.render('myAccount', {photos: photos, cloudinary, alerts: req.flash()});
+    });
+  } else {
+    req.flash("danger", "You need to be logged in to view this page");
+    res.redirect("/");
+  }
 });
 
 app.use('/', require('./controllers/auth'));

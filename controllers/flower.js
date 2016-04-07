@@ -13,6 +13,7 @@ router.get('/upload', function(req, res) {
     res.render('upload', {alerts: req.flash()});
   } else {
     req.flash("danger", "You need to be logged in to access this page");
+    res.redirect("/");
   }
 });
 
@@ -57,12 +58,12 @@ router.post('/upload', upload.single('imgUpload'), function(req, res) {
   });
 });
 
-router.get('/all', function(req, res) {
+router.get('/', function(req, res) {
   var userId = res.locals.currentUser.id;
   db.flowerTaxonomy.findAll({
     include: [db.flowerPhoto]
   }).then(function(flowers) {
-    res.render('all', {flowers: flowers, cloudinary});
+    res.render('all', {flowers: flowers, cloudinary, alerts: req.flash()});
   });
 });
 
@@ -73,8 +74,7 @@ router.get('/unknown/:id', function(req, res) {
     },
     include: [db.flowerTaxonomy]
   }).then(function(photo) {
-    // res.send(photo)
-    res.render('unknown', {photo: photo, cloudinary});
+    res.render('unknown', {photo: photo, cloudinary, alerts: req.flash()});
   });
 });
 
@@ -118,6 +118,30 @@ router.post('/unknown/:id', function(req, res) {
   }
 });
 
+router.get('/search', function(req, res) {
+  var searchTerm = req.query.searchTerm.toLowerCase();
+  var searchArray = searchTerm.split(" ");
+  var search = [];
+  for(var i = 0; i < searchArray.length; i++) {
+    var sTerm = searchArray[i];
+    var s = sTerm[0].toUpperCase() + sTerm.slice(1);
+    search.push(s);
+  }
+  searchQ = search.join(' ');
+
+  db.flowerTaxonomy.find({
+    where: {
+      name: searchQ
+    }
+  }).then(function(flower, err) {
+    if (flower) {
+      res.redirect("/flower/" + searchQ)
+    } else {
+      console.log(err)
+    }
+  })
+})
+
 router.post('/:id/like', function(req, res) {
   db.flowerPhoto.find({
     where: {
@@ -153,7 +177,7 @@ router.get('/:name', function(req, res) {
       },
       include: [db.user, db.flowerTaxonomy]
     }).then(function(photos) {
-      res.render('taxonomy', {flower: flower, photos: photos, cloudinary});
+      res.render('taxonomy', {flower: flower, photos: photos, cloudinary, alerts: req.flash()});
     });
   });
 });

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
     <title>AngioBloom</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="/js/script.js"></script>
@@ -8,19 +13,33 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
   </head>
   <body>
-    <header>
-      <a href="/">Home</a>
-      <a href="/flower/all">All flowers</a>
-      <a href="/flower/upload">Upload</a>
-      <a href="/myaccount">My Account</a>
-      <a href="/login">Login</a>
-      <a href="/signup">Signup</a>
-      <a href="/logout">Logout</a>
+    <header class="header">
+      <button class="hamburger">&#9776;</button>
+      <button class="cross">&#735;</button>
 
-      <label for="search">Search</label>
-      <input type="text" name="searchTerm">
-      
+      <form  method="GET" action="/flower/search">
+        <input type="text" name="searchTerm" placeholder="Search" id="search">
+      </form>
+
+
     </header>
+
+    <div class="menu">
+      <ul>
+        <a href="/"><li>Home</li></a>
+        <a href="/flower"><li>All flowers</li></a>
+        <% if (currentUser) { %>
+          <a href="/flower/upload"><li>Upload</li></a>
+          <a href="/myaccount"><li>My Account</li></a>
+          <a href="/logout"><li>Logout</li></a>
+        <% } else { %> 
+          <a href="/login"><li>Login</li></a>
+          <a href="/signup"><li>Signup</li></a>
+        <% } %>
+      </ul>
+    </div>
+
+
     <% if (typeof alerts !== 'undefined') { %>
       <% for (key in alerts) { %>
         <% alerts[key].forEach(function(thisMsg) { %>
