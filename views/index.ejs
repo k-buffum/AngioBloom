@@ -1,28 +1,35 @@
-<h1>Welcome to AngioBloom</h1>
-<h2>The best place on the internet to share flowers...</h2>
+<h1 class="heading">Welcome to AngioBloom</h1>
+<h2 class="heading">The best place on the internet to share flowers...</h2>
 
-<% flowers.forEach(function(flower){ %>
-  <% var imgUrl = cloudinary.url(flower.flowerPhotos[0].picture )%>
-  <% if (flower.name !== '') { %>
-    <div>
-      <a href="/flower/<%= flower.name %>">
-        <h3><%= flower.name %></h3>
-        <img src="<%= imgUrl %>" class="mainFlower">
-      </a>
-    </div>
-  <% } %> 
-<% }) %>
-<button><a href="/flower">View All Flowers</a></button> 
+<div class="flowerContainer">
+  <% flowers.forEach(function(flower){ %>
+    <% var imgUrl = cloudinary.url(flower.flowerPhotos[0].picture )%>
+    <% if (flower.name !== '') { %>
+      <div class="flowerTypes">
+        <a href="/flower/<%= flower.name %>">
+          <div class="mainFlowerName">
+            <h3><%= flower.name %></h3>
+          </div>
+          <img src="<%= imgUrl %>" class="mainFlower">
+        </a>
+      </div>
+    <% } %> 
+  <% }) %>
+</div>
+<button id="allFlowers"><a href="/flower">View All Flowers</a></button> 
 
-<h2>Can you identify these flowers?</h2>
 
-<% flowers.forEach(function(flower){ %>
-  <% if (flower.name == '') { %>
-    <% for(var i = 0; i < flower.flowerPhotos.length; i++) { %>
-      <% var imgUrl = cloudinary.url(flower.flowerPhotos[i].picture)%>
-        <div>
-          <a href="/flower/unknown/<%= flower.flowerPhotos[i].id %>"><img src="<%= imgUrl %>" class="mainFlower unknownFlower"></a>
-        </div>
-      <% } %> 
-  <% } %>
-<% }) %>
+<h2 class="heading">Can you identify these flowers?</h2>
+
+<div class="flowerContainer">
+  <% flowers.forEach(function(flower){ %>
+    <% if (flower.name == '') { %>
+      <% for(var i = 0; i < flower.flowerPhotos.length; i++) { %>
+        <% var imgUrl = cloudinary.url(flower.flowerPhotos[i].picture)%>
+          <div class="unknownFlowers">
+            <a href="/flower/unknown/<%= flower.flowerPhotos[i].id %>"><img src="<%= imgUrl %>" class="mainFlower unknownFlower"></a>
+          </div>
+        <% } %> 
+    <% } %>
+  <% }) %>
+</div>

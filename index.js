@@ -65,6 +65,10 @@ app.get('/myaccount', function(req, res) {
   }
 });
 
+app.get('/error', function(req, res) {
+  res.render('error');
+});
+
 app.use('/', require('./controllers/auth'));
 app.use('/flower', require('./controllers/flower'));
 app.listen(process.env.PORT || 3000);

@@ -137,7 +137,7 @@ router.get('/search', function(req, res) {
     if (flower) {
       res.redirect("/flower/" + searchQ)
     } else {
-      console.log(err)
+      res.render("error")
     }
   })
 })
@@ -177,6 +177,15 @@ router.get('/:name', function(req, res) {
       },
       include: [db.user, db.flowerTaxonomy]
     }).then(function(photos) {
+      likes = []
+      id = []
+      for(var i=0;i<photos.length;i++){
+        likes.push(photos[i].likes)
+        id.push(photos[i].id)
+      }
+      console.log("Likes: " + likes)
+      console.log("ID: " + id)
+
       res.render('taxonomy', {flower: flower, photos: photos, cloudinary, alerts: req.flash()});
     });
   });

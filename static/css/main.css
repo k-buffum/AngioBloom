@@ -2,6 +2,10 @@
 GENERAL
 ******************************/
 
+body {
+  background-color: floralwhite;
+}
+
 .cross {
   font-size: 3em;
   line-height: 65px;
@@ -32,14 +36,18 @@ GENERAL
 }
 
 header{
-  background: blanchedalmond; 
+  background: floralwhite; 
   height: 50px; 
   text-align: center;
   width: 100%; 
 }
 
+.heading {
+  text-align: center;
+}
+
 .menu {
-  background: floralwhite;
+  background: ivory;
   font-size: 0.8em;
   font-weight: bold;
   position: absolute;
@@ -73,6 +81,7 @@ header{
   margin: 1%;
   text-align: center;
   vertical-align: center;
+  width: 80%;
 }
 
 
@@ -81,8 +90,36 @@ header{
 HOME PAGE
 ******************************/
 
+#allFlowers {
+  background-color: white;
+  border-radius: 2%;
+  margin-left: 12%;
+  margin-top: 1%;
+  width: 76%;
+}
+
+#allFlowers a {
+  color: black; 
+}
+
+.flowerContainer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flowerTypes, .unknownFlowers {
+  display: inline-block;
+  margin: 5px;
+}
+
 .mainFlower {
   max-width: 450px;
+}
+
+.mainFlowerName {
+  background-color: rgba(4, 64, 96, 1);
+  color: #90AAB9;
+  padding: 1px;
 }
 
 

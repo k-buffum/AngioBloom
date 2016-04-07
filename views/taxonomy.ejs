@@ -1,4 +1,4 @@
-<h1><%= flower.name %> (<%= flower.scientificName %>)</h1>
+<h1 class="heading"><%= flower.name %> (<%= flower.scientificName %>)</h1>
 <img src="<%= cloudinary.url(flower.flowerPhotos[0].picture) %>" id="mainTaxonomyPic">
 
 <div>
@@ -56,10 +56,10 @@
   <div>
     <img src="<%= imgUrl %>" class="secondaryTaxonomyPic">
     <h3>
-      <%= photos[i].likes ? photos[i].likes : "0" %>
-        <a href="/flower/<%= photos[i].id %>/like" class="likeBtn"><i class="fa fa-heart"></i></a>
-      - <%= photos[i].user ? photos[i].user.points : "No user" %> points
-      - <%= photos[i].user ? photos[i].user.username : "No user!" %>
+      <a href="/flower/<%= photos[i].id %>/like" class="likeBtn"><i class="fa fa-heart"></i></a>
+      <%= photos[i].likes ? photos[i].likes : "" %>
+      <!-- - <%= photos[i].user ? photos[i].user.points : "No user" %> points -->
+      &#10048;<%= photos[i].user ? photos[i].user.username : "No user!" %>
     </h3>
   </div>
 <% } %>
