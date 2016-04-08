@@ -4,10 +4,10 @@ This app was inspired by Seattle during Spring. AngioBloom can be used by anyone
 Starting this app was challenging because I needed to narrow down what features I wanted to implement.  I began by creating user stories and wireframes followed by the ERD.  Once I had a plan I began working on the upload page starting with the backend.  The final day of the project was dedicated to styling, which turned out to be more challenging than I anticipated.  AngioBloom was made using Node, Express, SQL, & Bcrypt.
 
 ### Screen Shots
-<img src="static/css/main.png" width="300">
-<img src="static/css/taxonomy.png" width="300">
-<img src="static/css/myAccount.png" width="300">
-<img src="static/css/unknown.png" width="300">
+<img src="static/css/main.png" width="440">
+<img src="static/css/taxonomy.png" width="440">
+<img src="static/css/myAccount.png" width="440">
+<img src="static/css/unknown.png" width="440">
 
 
 ### Wireframes, ERD, & User Stories
