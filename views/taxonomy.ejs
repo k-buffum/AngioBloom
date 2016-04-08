@@ -1,65 +1,78 @@
-<h1 class="heading"><%= flower.name %> (<%= flower.scientificName %>)</h1>
-<img src="<%= cloudinary.url(flower.flowerPhotos[0].picture) %>" id="mainTaxonomyPic">
+<div class="mainTaxonomyPic">
+  <h1 class="heading topImgText"><%= flower.name %> (<%= flower.scientificName %>)</h1>
+  <img src="<%= cloudinary.url(flower.flowerPhotos[0].picture) %>" class="mainTaxonomyPic">
+</div>
 
-<div>
+<div id="scientificNamesContainer">
   <% if (flower.order) { %>
-    <div>
-      <h2>Order: </h2>
+    <div class="scientificNames">
+      <h2>Order</h2>
       <h2><%= flower.order %></h2>
     </div>
   <% } %>
 
   <% if (flower.family) { %>
-    <div>
-      <h2>Family: </h2>
+    <div class="scientificNames">
+      <h2>Family</h2>
       <h2><%= flower.family %></h2>
     </div>
   <% } %>
 
   <% if (flower.genus) { %>
-    <div>
-      <h2>Genus: </h2>
+    <div class="scientificNames">
+      <h2>Genus</h2>
       <h2><%= flower.genus %></h2>
     </div>
   <% } %>
 </div>
 
-<% if (flower.lowTemperature && flower.highTemperature) { %>
-  <h3>Temperature: <%= flower.lowTemperature %> - <%= flower.highTemperature %></h3>
-<% } %>
+<div id="infoMapContainer">
+  <div class="flowerInfoContainer" id="flowerInfo">
+    <% if (flower.lowTemperature && flower.highTemperature) { %>
+      <h4>Temperature: <%= flower.lowTemperature %> - <%= flower.highTemperature %></h4>
+    <% } %>
 
-<% if (flower.lowHumidity && flower.highHumidity) { %>
-  <h3>Humidity: <%= flower.lowHumidity %> - <%= flower.highHumidity %></h3>
-<% } %>
+    <% if (flower.lowHumidity && flower.highHumidity) { %>
+      <h4>Humidity: <%= flower.lowHumidity %> - <%= flower.highHumidity %></h4>
+    <% } %>
 
-<% if (flower.sunlightIntensity && flower.sunlightFrequency) { %>
-  <h3>Prefers <%= flower.sunlightIntensity %> intensity of <%= flower.sunlightFrequency %> sunlight.</h3>
-<% } %>
+    <% if (flower.sunlightIntensity && flower.sunlightFrequency) { %>
+      <h4>Prefers <%= flower.sunlightIntensity %> intensity of <%= flower.sunlightFrequency %> sunlight.</h4>
+    <% } %>
 
-<% if (flower.waterIntensity && flower.waterFrequency) { %>
-  <h3>Prefers <%= flower.waterIntensity %> amount of <%= flower.waterFrequency %> watering.</h3>
-<% } %>
+    <% if (flower.waterIntensity && flower.waterFrequency) { %>
+      <h4>Prefers <%= flower.waterIntensity %> amount of <%= flower.waterFrequency %> watering.</h4>
+    <% } %>
 
-<% if (flower.terrain) { %>
-  <h3>Terrain: <%= flower.terrain %></h3>
-<% } %>
+    <% if (flower.terrain) { %>
+      <h4>Terrain: <%= flower.terrain %></h4>
+    <% } %>
 
-<% photos.forEach(function(flower) { %>
-  <% if (flower.terrain) { %>
-    <%= flower.terrain %>
-  <% } %>
-<% }) %>
-
-
-<% for(var i = 0; i < photos.length; i++) { %>
-  <% var imgUrl = cloudinary.url(photos[i].picture) %>
-  <div>
-    <img src="<%= imgUrl %>" class="secondaryTaxonomyPic">
-    <h3>
-      <a href="/flower/<%= photos[i].id %>/like" class="likeBtn"><i class="fa fa-heart"></i></a>
-      <%= photos[i].likes ? photos[i].likes : "" %>
-      <!-- - <%= photos[i].user ? photos[i].user.points : "No user" %> points -->
-      &#10048;<%= photos[i].user ? photos[i].user.username : "No user!" %>
-    </h3>
+    <% photos.forEach(function(flower) { %>
+      <% if (flower.terrain) { %>
+        <%= flower.terrain %>
+      <% } %>
+    <% }) %>
   </div>
-<% } %>
+
+  <div class="flowerInfoContainer">
+    <img src="/css/map.png" id="map">
+  </div>
+</div>
+
+<br>
+
+<div id="photoContainers">
+  <% for(var i = 0; i < photos.length; i++) { %>
+    <% var imgUrl = cloudinary.url(photos[i].picture) %>
+    <div class="flowerPictures">
+      <img src="<%= imgUrl %>" class="secondaryTaxonomyPic">
+      <h3>
+        <a href="/flower/<%= photos[i].id %>/like" class="likeBtn"><i class="fa fa-heart"></i></a>
+        <%= photos[i].likes ? photos[i].likes : "" %>
+        <!-- - <%= photos[i].user ? photos[i].user.points : "No user" %> points -->
+        &#10048;<%= photos[i].user ? photos[i].user.username : "No user!" %>
+      </h3>
+    </div>
+  <% } %>
+</div>

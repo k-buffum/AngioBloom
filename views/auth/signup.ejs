@@ -1,21 +1,27 @@
-<h1>Signup with AngioBloom</h1>
+<h1 class="heading">Signup with AngioBloom</h1>
 
-<form method="POST">
+<form method="POST" class="formContainer">
+  
+  <label for="username">Username</label>
   <div class="signupContainer">
-    <label for="username">Username</label>
-    <input type="text" name="username">
+    <input type="text" name="username" id="username">
   </div>
+  
+  <label for="email">Email</label>
   <div class="signupContainer">
-    <label for="email">Email</label>
-    <input type="email" name="email">
+    <input type="email" name="email" class="email">
   </div>
+  
+  <label for="password">Password</label>
   <div class="signupContainer">
-    <label for="password">Password</label>
-    <input type="password" name="password">
+    <input type="password" name="password"class="password">
   </div>
+  
+  <label for="password2">Confirm Password</label>
   <div class="signupContainer">
-    <label for="password2">Confirm Password</label>
-    <input type="password" name="password2">
+    <input type="password" name="password2"class="password">
   </div>
+  
+  <br>
   <input type="submit">
 </form>

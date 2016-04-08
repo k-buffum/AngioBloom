@@ -1,9 +1,24 @@
 /*****************************
+ALL FLOWERS PAGE
+******************************/
+
+.allFlowers {
+  display: inline-block;
+  margin: 5px 10px 10px 10px;
+}
+
+.allFlowersContainer {
+  text-align: center;
+}
+
+
+
+/*****************************
 GENERAL
 ******************************/
 
 body {
-  background-color: floralwhite;
+  background-color: whitesmoke;
 }
 
 .cross {
@@ -36,7 +51,7 @@ body {
 }
 
 header{
-  background: floralwhite; 
+  background: #2E7DAC; 
   height: 50px; 
   text-align: center;
   width: 100%; 
@@ -47,7 +62,7 @@ header{
 }
 
 .menu {
-  background: ivory;
+  background: #4C96C2;
   font-size: 0.8em;
   font-weight: bold;
   position: absolute;
@@ -77,10 +92,9 @@ header{
 }
 
 #search {
-  height: 35px;
+  height: 30px;
   margin: 1%;
   text-align: center;
-  vertical-align: center;
   width: 80%;
 }
 
@@ -107,7 +121,7 @@ HOME PAGE
   text-align: center;
 }
 
-.flowerTypes, .unknownFlowers {
+.flowerTypes, .flowerPictures, .unknownFlowers {
   display: inline-block;
   margin: 5px;
 }
@@ -117,9 +131,23 @@ HOME PAGE
 }
 
 .mainFlowerName {
-  background-color: rgba(4, 64, 96, 1);
+  background-color: rgba(13, 103, 157, 1);
   color: #90AAB9;
   padding: 1px;
+}
+
+
+
+/*****************************
+LOGIN/SIGNUP PAGE
+******************************/
+
+.email, .password, #username {
+  width: 50%;
+}
+
+.formContainer {
+  text-align: center;
 }
 
 
@@ -132,22 +160,70 @@ MY ACCOUNT PAGE
   max-width: 450px;
 }
 
+.userInfo {
+  text-align: center;
+}
+
 
 
 /*****************************
 TAXONOMY PAGE
 ******************************/
 
-#mainTaxonomyPic {
-  max-width: 500px;
+.flowerInfoContainer {
+  display: inline-block;
+  margin: 1% 3%;
+}
+
+.flowerPictures {
+  margin: 2% 1.8%;
+}
+
+#infoMapContainer {
+  margin: 0 15%;
 }
 
 .likeBtn {
   color: pink;
 }
 
+.mainTaxonomyPic {
+  margin: 0 auto;
+  max-width: 975px;
+  top: 0;
+}
+
+#map {
+  max-width: 450px;
+  clear: right;
+}
+
+#photoContainers {
+  text-align: center;
+}
+
+.scientificNames {
+  display: inline-block;
+  margin: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#scientificNamesContainer {
+  text-align: center;
+}
+
 .secondaryTaxonomyPic {
   max-width: 450px;
+}
+
+.topImgText {
+  background-color: rgba(13, 103, 157, 1);
+  color: white;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  position: relative;
+  padding: 6px;
 }
 
 
@@ -156,6 +232,190 @@ TAXONOMY PAGE
 UPLOAD PAGE
 ******************************/
 
+#firstQuestions {
+  display: inline-block;
+  margin-top: 1%;
+  text-align: center;
+}
+
+#imgPreview{
+  height: 400px;
+  width: 500px;
+}
+
 #imgPreview img {
   width: 500px;
 }
+
+.imgUpload {
+  float: left;
+}
+
+#imgUpload {
+  padding-left: 50%;
+}
+
+#uploadForm {
+  text-align: center;
+}
+
+
+/*****************************
+TAXONOMY PAGE MEDIA QUERIES
+******************************/
+
+@media (max-width: 450px) {
+  .mainTaxonomyPic {
+    max-width: 450px;
+  }
+
+  #map {
+    margin-top: -100px;
+  }
+
+  .secondaryTaxonomyPic {
+    width: 182px;
+  }
+}
+
+@media (max-width: 500px) {
+  #flowerInfo h4 {
+    font-size: 15px;
+  }
+
+  .mainTaxonomyPic {
+    max-width: 500px;
+  }
+
+  #map {
+    margin-top: -125px;
+    width: 200px;
+  }
+
+  .scientificNames h2 {
+    padding-right: 10px;
+  }
+
+  .secondaryTaxonomyPic {
+    width: 200px;
+  }
+}
+
+@media (max-width: 550px) {
+  .mainTaxonomyPic {
+    max-width: 550px;
+  }
+
+  .secondaryTaxonomyPic {
+    width: 225px;
+  }
+}
+
+@media (max-width: 600px) {
+  #flowerInfo h4 {
+    font-size: 18px;
+  }
+
+  .flowerPictures h3 {
+    font-size: 18px;
+  }
+
+  .mainTaxonomyPic {
+    max-width: 600px;
+  }
+
+  .mainTaxonomyPic h1 {
+    font-size: 30px;
+  }
+
+  #map {
+    margin-top: -160px;
+    width: 250px;
+  }
+
+  .scientificNames h2 {
+    font-size: 25px;
+  }
+
+  .secondaryTaxonomyPic {
+    width: 255px;
+  }
+}
+
+@media (max-width: 650px) {
+  #flowerInfo h4 {
+    font-size: 20px;
+  }
+
+  .mainTaxonomyPic {
+    max-width: 650px;
+  }
+
+  #map {
+    margin-top: -190px;
+  }
+
+  .secondaryTaxonomyPic {
+    width: 275px;
+  }
+}
+
+@media (max-width: 700px) {
+  .mainTaxonomyPic {
+    max-width: 700px;
+  }
+
+  .scientificNames h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 750px) {
+  .flowerInfoContainer {
+    width: 40%;
+  }
+
+  .flowerPictures {
+    margin-left: 5%;
+  }
+
+  #infoMapContainer {
+    margin: 0;
+  }
+  
+  .mainTaxonomyPic {
+    max-width: 750px;
+  }
+
+  #map {
+    margin-top: -175px;
+    width: 300px;
+  }
+
+  .scientificNames {
+    display: inline-block;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .scientificNames h2 {
+    padding-right: 45px;
+  }
+
+  .secondaryTaxonomyPic {
+    width: 295px;
+  }
+}
+
+@media (max-width: 1400px) {
+  #infoMapContainer, #photoContainer {
+    margin: 0 10%;
+  }
+}
+
+/*@media (min-width: 1400px) {
+  #photoContainer {
+    margin: 0 15%;
+  }
+}*/
