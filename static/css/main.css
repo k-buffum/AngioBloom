@@ -229,10 +229,23 @@ TAXONOMY PAGE
 
 
 /*****************************
+UNKNOWN PAGE
+******************************/
+
+#unknownFlowerPic, #unknownForm {
+  text-align: center;
+}
+
+.unknownQuestions {
+  margin: 10px;
+}
+
+
+/*****************************
 UPLOAD PAGE
 ******************************/
 
-#firstQuestions {
+/*#firstQuestions {
   display: inline-block;
   margin-top: 1%;
   text-align: center;
@@ -243,22 +256,30 @@ UPLOAD PAGE
   width: 500px;
 }
 
-#imgPreview img {
-  width: 500px;
-}
-
 .imgUpload {
   float: left;
 }
 
 #imgUpload {
   padding-left: 50%;
+}*/
+
+#imgPreview img {
+  width: 500px;
+}
+
+#imgUpload {
+  margin-left: 40%;
+  margin-top: 10px;
 }
 
 #uploadForm {
   text-align: center;
 }
 
+.uploadQuestions {
+  margin: 10px;
+}
 
 /*****************************
 TAXONOMY PAGE MEDIA QUERIES
