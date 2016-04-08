@@ -38,17 +38,27 @@ $(document).ready(function() {
 
   $(".likeBtn").on("click", function(e) {
     e.preventDefault();
-    console.log("Step 1 complete");
     var myUrl = $(this).attr("href");
     $.ajax({
       method: "POST",
       url: myUrl
     }).done(function(data) {
-      console.log(data)
-      console.log("Step 2 complete");
       window.location.replace("");
     });
-    console.log("Step 3 complete");
+  });
+
+  $(document).ready(function() {
+    $(".delete-link").on("click", function(e) {
+      e.preventDefault();
+      var myUrl = $(this).attr("href");
+      console.log("****** delete url:"+myUrl);
+      $.ajax({
+        method: "DELETE",
+        url: myUrl
+      }).done(function(success) {
+        window.location.href="/myaccount"
+      });
+    }); 
   });
 
 });

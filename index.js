@@ -65,6 +65,16 @@ app.get('/myaccount', function(req, res) {
   }
 });
 
+app.delete("/myaccount/flower/:id", function(req, res) {
+  db.flowerPhoto.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function() {
+    res.send({message: "Flower deleted!"});
+  });
+});
+
 app.get('/error', function(req, res) {
   res.render('error');
 });

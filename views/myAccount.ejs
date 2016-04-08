@@ -11,6 +11,7 @@
     <div class="allFlowers">
       <img src="<%= imgUrl %>" class="myPhoto">
       <h3><%= photos[i].flowerTaxonomy.name ? photos[i].flowerTaxonomy.name : "Unknown" %></h3>
+      <button><a href="/myaccount/flower/<%= photos[i].id %>" class="delete-link">Delete</a></button>
     </div>
   <% } %>
 </div>
