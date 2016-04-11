@@ -177,16 +177,24 @@ router.get('/:name', function(req, res) {
       },
       include: [db.user, db.flowerTaxonomy]
     }).then(function(photos) {
-      likes = []
-      id = []
+      var likes = []
+      var id = []
+      // For loop pushes all likes and id's of the likes for the specific flower photos on the page to arrays
       for(var i=0;i<photos.length;i++){
         likes.push(photos[i].likes)
         id.push(photos[i].id)
       }
-      console.log("Likes: " + likes)
-      console.log("ID: " + id)
+      // mostLiked gets the index of the highest likes in the like array
+      var mostLiked = likes.indexOf(Math.max.apply(Math, likes))
 
-      res.render('taxonomy', {flower: flower, photos: photos, cloudinary, alerts: req.flash()});
+      // db search finds photo w/ most likes
+      db.flowerPhoto.find({
+        where: {
+          id: id[mostLiked]
+        }
+      }).then(function(mostLikedPhoto) {
+        res.render('taxonomy', {flower: flower, photos: photos, mostLikedPhoto: mostLikedPhoto, cloudinary, alerts: req.flash()});
+      });
     });
   });
 });
