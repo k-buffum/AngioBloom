@@ -47,19 +47,35 @@ $(document).ready(function() {
     });
   });
 
-  $(document).ready(function() {
-    $(".delete-link").on("click", function(e) {
-      e.preventDefault();
-      var myUrl = $(this).attr("href");
-      console.log("****** delete url:"+myUrl);
-      $.ajax({
-        method: "DELETE",
-        url: myUrl
-      }).done(function(success) {
-        window.location.href="/myaccount"
-      });
-    }); 
+  $(".delete-link").on("click", function(e) {
+    e.preventDefault();
+    var myUrl = $(this).attr("href");
+    $.ajax({
+      method: "DELETE",
+      url: myUrl
+    }).done(function(success) {
+      window.location.href="/myaccount"
+    });
   });
 
+  // Delete's Photo after 3 flag clicks
+  $(".flagBtn").on("click", function(e){
+    e.preventDefault();
+    var picLink = $(this).attr("href");
+      $.ajax({
+        method: "POST",
+        url: picLink
+      }).done(function(picture) {
+        window.location.replace("");
+      })
+
+  //   $.ajax({
+  //     method: "DELETE",
+  //     url: picLink
+  //   }).done(function(success) {
+  //     window.location.href="/flower"
+  //   });
+  });
+  
 });
 

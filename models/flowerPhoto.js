@@ -8,7 +8,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       defaultValue: 0
     },
-    location: DataTypes.STRING
+    location: DataTypes.STRING,
+    flags: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

@@ -2,19 +2,25 @@
 <h2 class="heading">The best place on the internet to share flowers...</h2>
 
 <div class="flowerContainer">
-  <% flowers.forEach(function(flower){ %>
-    <% var imgUrl = cloudinary.url(flower.flowerPhotos[0].picture )%>
-    <% if (flower.name !== '') { %>
+  <% if (flowers.length < 7) { %>
+    <% var mainDisplay = (flowers.length) %>
+  <% } else { %>
+    <% var mainDisplay = 7 %>
+  <% } %>
+
+  <% for(var i = 0; i < mainDisplay; i++) {%>
+    <% var imgUrl = cloudinary.url(flowers[i].flowerPhotos[0].picture )%>
+    <% if (flowers[i].name !== '') { %>
       <div class="flowerTypes">
-        <a href="/flower/<%= flower.name %>">
+        <a href="/flower/<%= flowers[i].name %>">
           <div class="mainFlowerName">
-            <h3><%= flower.name %></h3>
+            <h3><%= flowers[i].name %></h3>
           </div>
           <img src="<%= imgUrl %>" class="mainFlower">
         </a>
       </div>
     <% } %> 
-  <% }) %>
+  <% } %>
 </div>
 <button id="allFlowers"><a href="/flower">View All Flowers</a></button> 
 

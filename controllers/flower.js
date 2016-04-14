@@ -142,6 +142,44 @@ router.get('/search', function(req, res) {
   })
 })
 
+router.post('/flag/:id', function(req, res) {
+  console.log("Photo ID: " + req.params.id)
+
+  db.flowerPhoto.find({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(photo) {
+    console.log("Photo Info: " + photo)
+
+    if(photo.flags == "null") {
+      photo.updateAttributes({
+        flags: 1
+      });
+      res.sendStatus(200)
+    } else if(photo.flags < 3) {
+      var flagval = photo.flags
+      photo.updateAttributes({
+        flags: flagval + 1
+      });
+      
+      console.log("flagval: " + flagval)
+      
+      res.sendStatus(200)
+    }
+    // else {
+    //   console.log("Photo being destroyed!")
+    //   db.flowerPhoto.destroy({
+    //     where: {
+    //       id:req.params.id
+    //     }
+    //   }).then(function() {
+    //     res.send({message: "Photo deleted!"});
+    //   });
+    // }
+  })
+})
+
 router.post('/:id/like', function(req, res) {
   db.flowerPhoto.find({
     where: {

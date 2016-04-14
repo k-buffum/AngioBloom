@@ -44,6 +44,7 @@ app.get('/', function(req, res) {
   db.flowerTaxonomy.findAll({
     include: [db.flowerPhoto]
   }).then(function(flowers) {
+    // res.send(flowers)
     res.render('index', {flowers: flowers, cloudinary, alerts: req.flash()});  
   });
 });
