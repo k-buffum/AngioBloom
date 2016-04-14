@@ -74,7 +74,7 @@
         <a href="/flower/<%= photos[i].id %>/like" class="likeBtn"><i class="fa fa-heart"></i></a>
         <%= photos[i].likes ? photos[i].likes : "" %>
 
-        <a href="/flower/flag/<%= photos[i].id %>" class="flagBtn"><i class="fa fa-flag" aria-hidden="true"></i></a>
+        <a href="/flower/flag/<%= photos[i].id %>" alt="<%= photos[i].flags %>" class="flagBtn"><i class="fa fa-flag" aria-hidden="true"></i></a>
 
         <!-- - <%= photos[i].user ? photos[i].user.points : "No user" %> points -->
         &#10048;<%= photos[i].user ? photos[i].user.username : "No user!" %>

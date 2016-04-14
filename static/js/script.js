@@ -62,19 +62,27 @@ $(document).ready(function() {
   $(".flagBtn").on("click", function(e){
     e.preventDefault();
     var picLink = $(this).attr("href");
-      $.ajax({
-        method: "POST",
-        url: picLink
-      }).done(function(picture) {
-        window.location.replace("");
-      })
+    var flags = $(this).attr("alt");
+      // $.ajax({
+      //   method: "POST",
+      //   url: picLink
+      // }).done(function(picture) {
+      //   window.location.replace("");
+      // })
 
-  //   $.ajax({
-  //     method: "DELETE",
-  //     url: picLink
-  //   }).done(function(success) {
-  //     window.location.href="/flower"
-  //   });
+    if (flags === 3) {
+      method = "DELETE"
+    } else {
+      method = "POST"
+    }
+
+
+    $.ajax({
+      method: method,
+      url: picLink
+    }).done(function(success) {
+      window.location.replace("");
+    });
   });
   
 });
