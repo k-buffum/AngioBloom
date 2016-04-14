@@ -9,16 +9,18 @@
   <% } %>
 
   <% for(var i = 0; i < mainDisplay; i++) {%>
-    <% var imgUrl = cloudinary.url(flowers[i].flowerPhotos[0].picture )%>
+    <%  var imgUrl = cloudinary.url(flowers[i].flowerPhotos[0]) ? cloudinary.url(flowers[i].flowerPhotos[0].picture) : false %>
     <% if (flowers[i].name !== '') { %>
-      <div class="flowerTypes">
-        <a href="/flower/<%= flowers[i].name %>">
-          <div class="mainFlowerName">
-            <h3><%= flowers[i].name %></h3>
-          </div>
-          <img src="<%= imgUrl %>" class="mainFlower">
-        </a>
-      </div>
+      <% if (imgUrl) { %>
+        <div class="flowerTypes">
+          <a href="/flower/<%= flowers[i].name %>">
+            <div class="mainFlowerName">
+              <h3><%= flowers[i].name %></h3>
+            </div>
+            <img src="<%= imgUrl %>" class="mainFlower">
+          </a>
+        </div>
+      <% } %>
     <% } %> 
   <% } %>
 </div>

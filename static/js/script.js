@@ -63,19 +63,12 @@ $(document).ready(function() {
     e.preventDefault();
     var picLink = $(this).attr("href");
     var flags = $(this).attr("alt");
-      // $.ajax({
-      //   method: "POST",
-      //   url: picLink
-      // }).done(function(picture) {
-      //   window.location.replace("");
-      // })
 
     if (flags === 3) {
       method = "DELETE"
     } else {
       method = "POST"
     }
-
 
     $.ajax({
       method: method,

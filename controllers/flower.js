@@ -143,37 +143,25 @@ router.get('/search', function(req, res) {
 })
 
 router.post('/flag/:id', function(req, res) {
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-  console.log("Photo ID: " + req.params.id)
-  console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-  
   db.flowerPhoto.find({
     where: {
       id: req.params.id
     }
   }).then(function(photo) {
-    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    console.log("Photo Info: " + photo)
-    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-
     if(photo.flags == "null") {
       photo.updateAttributes({
         flags: 1
       });
       res.sendStatus(200)
+ 
     } else if(photo.flags < 3) {
       var flagval = photo.flags
       photo.updateAttributes({
         flags: flagval + 1
       });
-      
-      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-      console.log("flagval: " + flagval)
-      console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-
       res.sendStatus(200)
+ 
     } else {
-      console.log("Photo being destroyed!")
       db.flowerPhoto.destroy({
         where: {
           id:req.params.id
