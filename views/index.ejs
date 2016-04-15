@@ -7,7 +7,7 @@
   <% } else { %>
     <% var mainDisplay = 7 %>
   <% } %>
-
+  
   <% for(var i = 0; i < mainDisplay; i++) {%>
     <%  var imgUrl = cloudinary.url(flowers[i].flowerPhotos[0]) ? cloudinary.url(flowers[i].flowerPhotos[0].picture) : false %>
     <% if (flowers[i].name !== '') { %>

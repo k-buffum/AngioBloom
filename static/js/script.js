@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  // NavBar
   $(".cross").hide();
   $(".menu").hide();
   $(".hamburger").click(function() {
@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
   });
 
-
+  // Upload Page: Shows preview of image
   $("#imgUpload").on("change", function() {
     if(typeof (FileReader) != "undefined") {
       var imgPreview = $('#imgPreview');
@@ -47,6 +47,7 @@ $(document).ready(function() {
     });
   });
 
+  // My Account Page: delete function for images
   $(".delete-link").on("click", function(e) {
     e.preventDefault();
     var myUrl = $(this).attr("href");
@@ -58,7 +59,7 @@ $(document).ready(function() {
     });
   });
 
-  // Delete's Photo after 3 flag clicks
+  // Taxonomy Page: Delete's Photo after 3 flag clicks
   $(".flagBtn").on("click", function(e){
     e.preventDefault();
     var picLink = $(this).attr("href");
@@ -78,5 +79,12 @@ $(document).ready(function() {
     });
   });
   
+  // Upload Page: hides questions until photo to be uploaded is selected
+  // if (document.getElementById("imgUpload").value == "") {
+  //   $("#uploadQuestionsContainer").hide();
+  // } else {
+  //   $("#uploadQuestionsContainer").show();
+  // }
+
 });
 

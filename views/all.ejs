@@ -1,17 +1,19 @@
 <h1 class="heading">So many flowers to see...</h1>
 
 <div class="allFlowersContainer">
-  <% flowers.forEach(function(flower){ %>
-    <% var imgUrl = cloudinary.url(flower.flowerPhotos[0].picture )%>
-    <% if (flower.name !== '') { %>
-      <div class="allFlowers">
-        <a href="/flower/<%= flower.name %>">
-          <div class="mainFlowerName">
-            <h3><%= flower.name %></h3>
-          </div>
-          <img src="<%= imgUrl %>" class="mainFlower">
-        </a>
-      </div>
+  <% for(var i = 0; i < flowers.length; i++) {%>
+    <%  var imgUrl = cloudinary.url(flowers[i].flowerPhotos[0]) ? cloudinary.url(flowers[i].flowerPhotos[0].picture) : false %>
+    <% if (flowers[i].name !== '') { %>
+      <% if (imgUrl) { %>
+        <div class="allFlowers">
+          <a href="/flower/<%= flowers[i].name %>">
+            <div class="mainFlowerName">
+              <h3><%= flowers[i].name %></h3>
+            </div>
+            <img src="<%= imgUrl %>" class="mainFlower">
+          </a>
+        </div>
+      <% } %>
     <% } %> 
-  <% }) %>
+  <% } %>
 </div>
