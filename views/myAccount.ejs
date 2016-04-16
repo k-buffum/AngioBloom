@@ -1,17 +1,21 @@
 <h1 class="heading">My Account</h1>
 
-<h2 class="userInfo">Username: <%= photos[0].user.username %></h2>
-<!-- <h2>Points: <%= photos[0].user.points ? photos[0].user.points : "0" %></h2> -->
+<h2 class="userInfo">Username: <%= currentUser.username %></h2>
+<!-- <h2>Points: <%= currentUser.points ? currentUser.points : "0" %></h2> -->
 
 <h2 class="heading">My Flowers</h2>
 
 <div class="allFlowersContainer">
-  <% for(var i = 0; i < photos.length; i++) { %>
-    <% var imgUrl = cloudinary.url(photos[i].picture) %>
-    <div class="allFlowers">
-      <img src="<%= imgUrl %>" class="myPhoto">
-      <h3><%= photos[i].flowerTaxonomy.name ? photos[i].flowerTaxonomy.name : "Unknown" %></h3>
-      <button><a href="/myaccount/flower/<%= photos[i].id %>" class="delete-link">Delete</a></button>
-    </div>
+  <% if (photos.length) { %>
+    <% for(var i = 0; i < photos.length; i++) { %>
+      <% var imgUrl = cloudinary.url(photos[i].picture) %>
+      <div class="allFlowers">
+        <img src="<%= imgUrl %>" class="myPhoto">
+        <h3><%= photos[i].flowerTaxonomy.name ? photos[i].flowerTaxonomy.name : "Unknown" %></h3>
+        <button><a href="/myaccount/flower/<%= photos[i].id %>" alt="<%= photos[i].userId %>" class="delete-link">Delete</a></button>
+      </div>
+    <% } %>
+  <% } else { %>
+    <h3>You currently have no photos, click <a href="/flower/upload">here</a> to begin uploading.</h3>
   <% } %>
 </div>

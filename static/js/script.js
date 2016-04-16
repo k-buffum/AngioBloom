@@ -50,13 +50,19 @@ $(document).ready(function() {
   // My Account Page: delete function for images
   $(".delete-link").on("click", function(e) {
     e.preventDefault();
+    var userId = res.locals.currentUser.id;
     var myUrl = $(this).attr("href");
-    $.ajax({
-      method: "DELETE",
-      url: myUrl
-    }).done(function(success) {
-      window.location.href="/myaccount"
-    });
+    var photoOwner = $(this).attr("alt");
+    if (userId === photoOwner) {
+      $.ajax({
+        method: "DELETE",
+        url: myUrl
+      }).done(function(success) {
+        window.location.href="/myaccount"
+      });
+    } else {
+      req.flash("danger", "This photo is not yours to delete");
+    }
   });
 
   // Taxonomy Page: Delete's Photo after 3 flag clicks
