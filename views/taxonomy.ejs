@@ -1,26 +1,26 @@
-<div class="mainTaxonomyPic">
+<div class="mainTaxonomyPic" id="taxonomyMainContainer">
   <h1 class="heading topImgText"><%= flower.name %> <%= flower.scientificName ? "(" + flower.scientificName + ")" : "" %></h1>
-  <img src="<%= cloudinary.url(mostLikedPhoto.picture) %>" class="mainTaxonomyPic">
+  <img src="<%= cloudinary.url(mostLikedPhoto.picture) %>" class="mainTaxonomyPic mainImg">
 </div>
 
 <div id="scientificNamesContainer">
   <% if (flower.order) { %>
     <div class="scientificNames">
-      <h2>Order</h2>
+      <h2>Order: </h2>
       <h2><%= flower.order %></h2>
     </div>
   <% } %>
 
   <% if (flower.family) { %>
     <div class="scientificNames">
-      <h2>Family</h2>
+      <h2>Family: </h2>
       <h2><%= flower.family %></h2>
     </div>
   <% } %>
 
   <% if (flower.genus) { %>
     <div class="scientificNames">
-      <h2>Genus</h2>
+      <h2>Genus: </h2>
       <h2><%= flower.genus %></h2>
     </div>
   <% } %>
@@ -59,7 +59,7 @@
   </div>
 
   <div class="flowerInfoContainer">
-    <img src="/css/map.png" id="map">
+    <img src="/images/map.png" id="map">
   </div>
 </div>
 
@@ -82,12 +82,3 @@
     </div>
   <% } %>
 </div>
-
-
-
-
-
-
-
-
-
