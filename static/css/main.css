@@ -21,83 +21,33 @@ body {
   background-color: whitesmoke;
 }
 
-.cross {
-  font-size: 3em;
-  line-height: 65px;
-}
-
-.cross, .hamburger {
-  background: none;
-  border: 0;
-  cursor: pointer;
-  font-weight: bold;
-  left: 0;
-  outline: none;
-  padding: 0px 15px 0px 15px;
-  position: absolute;
-  top: 0;
-  z-index: 10000000000000;
-}
-
 .glyphicon-home {
   font-size: 1.5em; 
   margin-top: 5px; 
   margin: 0 auto;
 }
 
-.hamburger {
-  font-size: 1.4em;
-  line-height: 45px;
-}
-
-header{
-  background: #2E7DAC; 
-  height: 50px; 
-  text-align: center;
-  width: 100%; 
-}
-
 .heading {
   text-align: center;
 }
 
-.menu {
-  background: #4C96C2;
-  font-size: 0.8em;
-  font-weight: bold;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  z-index: 1000000;
+.navbar {
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.menu a, .menu a:hover, .menu ul li a, .menu ul li a:hover {
-  color: black;
+.navbar-default {
+  border-bottom: 2px solid rgba(51, 122, 183, 0.34);
 }
 
-.menu li, .menu li:hover {
-  display: block;
-  padding: 15px 0 15px 0;
-  border-bottom: #1d1f20 1px solid;
+.navbar-default .navbar-brand {
+  color: #337ab7;
 }
 
-.menu ul {
-  padding: 0px;
-  list-style-type: none;
-  list-style-image: none;
+.navbar-default .navbar-nav>li>a {
+  color: #337ab7;
 }
-
-.menu ul, .menu ul li a {
-  margin: 0px;
-}
-
-#search {
-  height: 30px;
-  margin: 1%;
-  text-align: center;
-  width: 80%;
-}
-
 
 
 /*****************************
@@ -163,14 +113,6 @@ MY ACCOUNT PAGE
 .userInfo {
   text-align: center;
 }
-
-
-
-/*****************************
-TAXONOMY PAGE
-******************************/
-
-
 
 
 
