@@ -70,7 +70,6 @@
     <% var imgUrl = cloudinary.url(photos[i].picture) %>
     <div class="flowerPictures">
       <div class="secondaryTaxonomyPic" style="background-image:url(<%= imgUrl %>);"></div>
-      <!-- <img src="<%= imgUrl %>" class="secondaryTaxonomyPic"> -->
       <h3>
         <a href="/flower/<%= photos[i].id %>/like" class="likeBtn"><i class="fa fa-heart"></i></a>
         <%= photos[i].likes ? photos[i].likes : "" %>

@@ -113,7 +113,13 @@ MY ACCOUNT PAGE
 ******************************/
 
 .myPhoto {
-  max-width: 450px;
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  float: left;
+  height: 350px;
+  position: relative;
+  width: 350px;
 }
 
 .userInfo {
