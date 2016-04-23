@@ -11,6 +11,15 @@ ALL FLOWERS PAGE
   text-align: center;
 }
 
+.flowerPics {
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  float: left;
+  height: 350px;
+  position: relative;
+  width: 350px;
+}
 
 
 /*****************************
@@ -47,49 +56,6 @@ body {
 
 .navbar-default .navbar-nav>li>a {
   color: #337ab7;
-}
-
-
-/*****************************
-HOME PAGE
-******************************/
-
-#allFlowers {
-  background-color: white;
-  border-radius: 2%;
-  margin-left: 12%;
-  margin-top: 1%;
-  width: 76%;
-}
-
-#allFlowers a {
-  color: black; 
-}
-
-.flowerContainer {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.flowerTypes, .flowerPictures, .unknownFlowers {
-  display: inline-block;
-  margin: 5px;
-}
-
-.mainFlower {
-  background-position: 50% 50%;
-  background-repeat: none;
-  background-size: cover;
-  float: left;
-  height: 450px;
-  position: relative;
-  width: 450px;
-}
-
-.mainFlowerName {
-  background-color: rgba(13, 103, 157, 1);
-  color: #90AAB9;
-  padding: 1px;
 }
 
 
@@ -132,7 +98,17 @@ MY ACCOUNT PAGE
 UNKNOWN PAGE
 ******************************/
 
-#unknownFlowerPic, #unknownForm {
+.unknownFlowerPic {
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  height: 450px;
+  margin: 2% 34%;
+  position: relative;
+  width: 450px;
+}
+
+.unknownFlowerPic, #unknownForm {
   text-align: center;
 }
 

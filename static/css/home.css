@@ -1,0 +1,191 @@
+#allFlowers {
+  background-color: white;
+  border-radius: 2%;
+  margin-left: 12%;
+  margin-top: 1%;
+  width: 76%;
+}
+
+#allFlowers a {
+  color: black; 
+}
+
+.flowerContainer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flowerTypes, .flowerPictures, .unknownFlowers {
+  display: inline-block;
+  margin: 5px;
+}
+
+.mainFlower {
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  float: left;
+  height: 400px;
+  position: relative;
+  width: 400px;
+}
+
+.mainFlowerName {
+  background-color: rgba(13, 103, 157, 1);
+  color: #90AAB9;
+  padding: 1px;
+}
+
+
+
+/************************
+MEDIA QUERIES
+************************/
+
+@media screen and (max-width: 450px) {
+  #homeH1 {
+    font-size: 25px;
+  }
+
+  #homeH2 {
+    font-size: 17px;
+  }
+
+  .mainFlower {
+    height: 180px;
+    width: 180px;
+  }
+
+  .mainFlowerName {
+    padding: 0;
+  }
+
+  .mainFlowerName h3 {
+    margin: 0;
+  }
+
+  #unknownH2 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 500px) {
+  #homeH1 {
+    font-size: 30px;
+  }
+
+  #homeH2 {
+    font-size: 20px;
+  }
+
+  .mainFlower {
+    height: 215px;
+    width: 215px;
+  }
+
+  .mainFlowerName {
+    padding: 0;
+  }
+
+  .mainFlowerName h3 {
+    margin: 0;
+  }
+
+  #unknownH2 {
+    font-size: 25px;
+  }
+
+}
+
+@media screen and (min-width: 501px) and (max-width: 550px) {
+  #homeH1 {
+    font-size: 32px;
+  }
+
+  #homeH2 {
+    font-size: 22px;
+  }
+
+  .mainFlower {
+    height: 238px;
+    width: 238px;
+  }
+
+  .mainFlowerName {
+    padding: 0;
+  }
+
+  .mainFlowerName h3 {
+    margin: 0;
+  }
+
+  #unknownH2 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 600px) {
+  #homeH1 {
+    font-size: 34px;
+  }
+
+  #homeH2 {
+    font-size: 24px;
+  }
+
+  .mainFlower {
+    height: 264px;
+    width: 264px;
+  }
+
+  .mainFlowerName {
+    padding: 0;
+  }
+
+  .mainFlowerName h3 {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 650px) {
+  #homeH2 {
+    font-size: 26px;
+  }
+
+  .mainFlower {
+    height: 288px;
+    width: 288px;
+  }
+}
+
+@media screen and (min-width: 651px) and (max-width: 700px) {
+  #homeH2 {
+    font-size: 28px;
+  }
+
+  .mainFlower {
+    height: 315px;
+    width: 315px;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 750px) {
+  .mainFlower {
+    height: 338px;
+    width: 338px;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 800px) {
+  .mainFlower {
+    height: 362px;
+    width: 362px;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 850px) {
+  .mainFlower {
+    height: 388px;
+    width: 388px;
+  }
+}

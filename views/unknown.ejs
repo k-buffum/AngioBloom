@@ -1,8 +1,6 @@
 <h1 class="heading">Can you identify this flower?</h1>
 
-<div id="unknownFlowerPic">
-  <img src="<%= cloudinary.url(photo.picture) %>" class="mainFlower">
-</div>
+<div class="unknownFlowerPic" style="background-image:url(<%= cloudinary.url(photo.picture) %>");></div>
 
 <div id="unknownForm">
   <form method="POST">
