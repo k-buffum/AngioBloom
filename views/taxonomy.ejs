@@ -1,6 +1,6 @@
-<div class="mainTaxonomyPic" id="taxonomyMainContainer">
+<div id="taxonomyMainContainer">
   <h1 class="heading topImgText"><%= flower.name %> <%= flower.scientificName ? "(" + flower.scientificName + ")" : "" %></h1>
-  <img src="<%= cloudinary.url(mostLikedPhoto.picture) %>" class="mainTaxonomyPic mainImg">
+  <div class="mainTaxonomyPic" style="background-image:url(<%= cloudinary.url(mostLikedPhoto.picture) %>);"></div>
 </div>
 
 <div id="scientificNamesContainer">
@@ -69,14 +69,12 @@
   <% for(var i = 0; i < photos.length; i++) { %>
     <% var imgUrl = cloudinary.url(photos[i].picture) %>
     <div class="flowerPictures">
-      <img src="<%= imgUrl %>" class="secondaryTaxonomyPic">
+      <div class="secondaryTaxonomyPic" style="background-image:url(<%= imgUrl %>);"></div>
+      <!-- <img src="<%= imgUrl %>" class="secondaryTaxonomyPic"> -->
       <h3>
         <a href="/flower/<%= photos[i].id %>/like" class="likeBtn"><i class="fa fa-heart"></i></a>
         <%= photos[i].likes ? photos[i].likes : "" %>
-
         <a href="/flower/flag/<%= photos[i].id %>" alt="<%= photos[i].flags %>" class="flagBtn"><i class="fa fa-flag" aria-hidden="true"></i></a>
-
-        <!-- - <%= photos[i].user ? photos[i].user.points : "No user" %> points -->
         &#10048;<%= photos[i].user ? photos[i].user.username : "No user!" %>
       </h3>
     </div>

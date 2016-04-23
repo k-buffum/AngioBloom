@@ -15,10 +15,14 @@
   color: pink;
 }
 
-.mainTaxonomyPic {
-  margin: 0 auto;
-  max-width: 450px;
-  top: 0;
+.mainTaxonomyPic, .secondaryTaxonomyPic {
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  float: left;
+  height: 450px;
+  position: relative;
+  width: 450px;
 }
 
 #map {
@@ -39,10 +43,6 @@
 
 #scientificNamesContainer {
   text-align: center;
-}
-
-.secondaryTaxonomyPic {
-  max-width: 450px;
 }
 
 .topImgText {
@@ -67,7 +67,8 @@ MEDIA QUERIES
   }
 
   .mainTaxonomyPic {
-    max-width: 400px;
+    height: 400px;
+    width: 400px;
   }
 
   #map {
@@ -79,6 +80,7 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
+    height: 300px;
     width: 300px;
   }
 }
@@ -103,6 +105,7 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
+    height: 205px;
     width: 205px;
   }
 }
@@ -118,6 +121,7 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
+    height: 230px;
     width: 230px;
   }
 }
@@ -136,7 +140,7 @@ MEDIA QUERIES
     margin: 0 10%;
   }
 
-  .mainTaxonomyPic h1 {
+  .topImgText {
     font-size: 30px;
   }
 
@@ -149,6 +153,7 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
+    height: 255px;
     width: 255px;
   }
 }
@@ -163,6 +168,7 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
+    height: 275px;
     width: 275px;
   }
 }
@@ -173,6 +179,7 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
+    height: 300px;
     width: 300px;
   }
 }
@@ -207,6 +214,7 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
+    height: 295px;
     width: 295px;
   }
 }
@@ -225,15 +233,12 @@ MEDIA QUERIES
     margin: 0;
   }
 
-  .mainImg {
+  .mainTaxonomyPic {
     float: left;
     margin-left: 2%;
     margin-top: 2%;
-    overflow: hidden;
-  }
-
-  .mainTaxonomyPic {
     max-width: 100%;
+    overflow: hidden;
   }
 
   #map {
@@ -256,7 +261,8 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
-    max-width: 350px;
+    height: 350px;
+    width: 350px;
   }
 
   #taxonomyMainContainer {
@@ -283,7 +289,7 @@ MEDIA QUERIES
     margin: 0 12%;
   }
 
-  .mainImg {
+  .mainTaxonomyPic {
     margin-left: 12%;
   }
 
