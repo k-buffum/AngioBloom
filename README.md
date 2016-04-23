@@ -28,9 +28,6 @@ Starting this app was challenging because I needed to narrow down what features 
 ### Major Hurdles
 * A challenge I faced was implementing the like buttons.
 
-### Unsolved Problems
-* Media Queries are not working
-
 ### To be Added
 * User points
 * Restrictions for editing flower information based on user points
