@@ -1,107 +1,115 @@
-<h1 class="heading">Can you identify this flower?</h1>
-
-<div class="unknownFlowerPic" style="background-image:url(<%= cloudinary.url(photo.picture) %>");></div>
+<div id="unknownH1Pic">
+  <h1 class="heading" id="unknownHeading">Can you identify this flower?</h1>
+  <div class="unknownFlowerPic" style="background-image:url(<%= cloudinary.url(photo.picture) %>");></div>
+</div>
 
 <div id="unknownForm">
   <form method="POST">
     
-    <div class="unknownQuestions">
-      <label for="flowerType">What type of flower is this?</label>
-      <input type="text" name="flowerType">
-    </div>
+      <div class="unknownQuestions">
+        <label for="flowerType">What type of flower is this?</label>
+        <input type="text" name="flowerType">
+      </div>
 
-    <label for="classification">Do you know this flower's scientific classification?</label>
-    <div>
+    <div id="UnknownQuestionsP1">
+      <label for="classification">Do you know this flower's scientific classification?</label>
       <div>
-        <label for="order">Order</label>
-        <div>
-          <input type="text" name="order">
+        <div class="unknownQuestions">
+          <label for="order">Order</label>
+          <div>
+            <input type="text" name="order">
+          </div>
+        </div>
+        <div class="unknownQuestions">
+          <label for="family">Family</label>
+          <div>
+            <input type="text" name="family">
+          </div>
+        </div>
+        <div class="unknownQuestions">
+          <label for="genus">Genus</label>
+          <div>
+            <input type="text" name="genus">
+          </div>
         </div>
       </div>
-      <div>
-        <label for="family">Family</label>
+      <div class="unknownQuestions">
+        <label for="scientificName">Scientific Name</label>
         <div>
-          <input type="text" name="family">
+          <input type="text" name="scientificName">
         </div>
       </div>
-      <div>
-        <label for="genus">Genus</label>
+
+      <div class="unknownQuestions">
+        <label for="terrain">What terrain does this flower like?</label>
+        <select name="terrain">
+          <option value=""> </option>
+          <option value="desert">desert</option>
+          <option value="forest">forest</option>
+          <option value="glacier">glacier</option>
+          <option value="grassland">grassland</option>
+          <option value="hills">hills</option>
+          <option value="jungle">jungle</option>
+          <option value="mountain">mountain</option>
+          <option value="ocean">ocean</option>
+          <option value="plains">plains</option>
+          <option value="swamp">swamp</option>
+          <option value="tropical">tropical</option>
+          <option value="tundra">tundra</option>
+        </select>
+      </div>
+      
+      <div class="unknownQuestions">
+        <label for"sunlightIntensity">What intensity of sunlight does this flower prefer?</label>
         <div>
-          <input type="text" name="genus">
+          <input type="radio" name="sunlightIntensity" value="low">Low Intensity</button>
+          <input type="radio" name="sunlightIntensity" value="moderate">Moderate Intensity</button>
+          <input type="radio" name="sunlightIntensity" value="high">High Intensity</button>
         </div>
       </div>
     </div>
-    <label for="scientificName">Scientific Name</label>
-    <div>
-      <input type="text" name="scientificName">
-    </div>
 
-    <div class="unknownQuestions">
-      <label for="terrain">What terrain does this flower like?</label>
-      <select name="terrain">
-        <option value=""> </option>
-        <option value="desert">desert</option>
-        <option value="forest">forest</option>
-        <option value="glacier">glacier</option>
-        <option value="grassland">grassland</option>
-        <option value="hills">hills</option>
-        <option value="jungle">jungle</option>
-        <option value="mountain">mountain</option>
-        <option value="ocean">ocean</option>
-        <option value="plains">plains</option>
-        <option value="swamp">swamp</option>
-        <option value="tropical">tropical</option>
-        <option value="tundra">tundra</option>
-      </select>
-    </div>
+    <div id="UnknownQuestionsP2">
 
-    <div class="unknownQuestions">
-      <label for"sunlightIntensity">What intensity of sunlight does this flower prefer?</label>
-      <div>
-        <input type="radio" name="sunlightIntensity" value="low">Low Intensity</button>
-        <input type="radio" name="sunlightIntensity" value="moderate">Moderate Intensity</button>
-        <input type="radio" name="sunlightIntensity" value="high">High Intensity</button>
+      <div class="unknownQuestions">
+        <label for"sunlightFrequency">With what frequency does this flower need sunlight?</label>
+        <div>
+          <input type="radio" name="sunlightFrequency" value="infrequent">Infrequent</button>
+          <input type="radio" name="sunlightFrequency" value="regular">Regular</button>
+          <input type="radio" name="sunlightFrequency" value="frequent">Frequent</button>
+        </div>
       </div>
-    </div>
 
-    <div class="unknownQuestions">
-      <label for"sunlightFrequency">With what frequency does this flower need sunlight?</label>
-      <div>
-        <input type="radio" name="sunlightFrequency" value="infrequent">Infrequent</button>
-        <input type="radio" name="sunlightFrequency" value="regular">Regular</button>
-        <input type="radio" name="sunlightFrequency" value="frequent">Frequent</button>
+      <div class="unknownQuestions">
+        <label for"waterAmount">How much water does this flower need?</label>
+        <div>
+          <input type="radio" name="waterIntensity" value="small">Small Amount</button>
+          <input type="radio" name="waterIntensity" value="moderate">Moderate Amount</button>
+          <input type="radio" name="waterIntensity" value="high">High Amount</button>
+        </div>
       </div>
-    </div>
 
-    <div class="unknownQuestions">
-      <label for"waterAmount">How much water does this flower need?</label>
-      <div>
-        <input type="radio" name="waterIntensity" value="small">Small Amount</button>
-        <input type="radio" name="waterIntensity" value="moderate">Moderate Amount</button>
-        <input type="radio" name="waterIntensity" value="high">High Amount</button>
+      <div class="unknownQuestions">
+        <label for"waterFrequency">With what frequency does this flower need water?</label>
+        <div>
+          <input type="radio" name="waterFrequency" value="infrequent">Infrequent</button>
+          <input type="radio" name="waterFrequency" value="regular">Regular</button>
+          <input type="radio" name="waterFrequency" value="frequent">Frequent</button>
+        </div>
       </div>
-    </div>
 
-    <div class="unknownQuestions">
-      <label for"waterFrequency">With what frequency does this flower need water?</label>
-      <div>
-        <input type="radio" name="waterFrequency" value="infrequent">Infrequent</button>
-        <input type="radio" name="waterFrequency" value="regular">Regular</button>
-        <input type="radio" name="waterFrequency" value="frequent">Frequent</button>
+      <div class="unknownQuestions">
+        <label for="temp">What is this flower's preferred temperature(&#8457;) range?</label>
+        <div>
+          <input type="number" name="lowTemp" placeholder="low"> - <input type="number" name="highTemp" placeholder="High">
+        </div>
       </div>
-    </div>
 
-    <div class="unknownQuestions">
-      <label for="temp">What is this flower's preferred temperature(&#8457;) range?</label>
-      <div>
-        <input type="number" name="lowTemp" placeholder="low"> - <input type="number" name="highTemp" placeholder="High">
-      </div>
-    </div>
-
-    <div class="unknownQuestions">
-      <label for="humidity">What is this flower's preferred humidity range?</label>
-      <div>
-        <input type="number" name="lowHumidity" placeholder="low"> - <input type="number" name="highHumidity" placeholder="High">
+      <div class="unknownQuestions">
+        <label for="humidity">What is this flower's preferred humidity range?</label>
+        <div>
+          <input type="number" name="lowHumidity" placeholder="low"> - <input type="number" name="highHumidity" placeholder="High">
+        </div>
       </div>
     </div>
 

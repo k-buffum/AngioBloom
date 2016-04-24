@@ -1,0 +1,138 @@
+.unknownFlowerPic {
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  float: left;
+  height: 450px;
+  margin: 2% 34%;
+  position: relative;
+  text-align: center;
+  width: 450px;
+}
+
+#unknownForm {
+  margin-top: 3%;
+  text-align: center;
+}
+
+#unknownH1Pic {
+  text-align: center;
+}
+
+.unknownQuestions {
+  margin-bottom: 3%;
+}
+
+
+
+/*******************************
+MEDIA QUERIES
+*******************************/
+
+@media screen and (max-width: 450px) {
+  .unknownFlowerPic {
+    height: 400px;
+    margin: 2% 0 5% 0;
+    width: 400px;
+  }
+
+  #unknownHeading {
+    font-size: 26px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 500px) {
+  .unknownFlowerPic {
+    margin: 2% 0 5% 0;
+  }
+
+  #unknownHeading {
+    font-size: 30px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 550px) {
+  .unknownFlowerPic {
+    margin: 2% 0 5% 6%;
+  }
+
+  #unknownHeading {
+    font-size: 32px;
+    margin-bottom: 7px;
+    margin-top: 7px;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 600px) {
+  .unknownFlowerPic {
+    margin: 2% 0 5% 10%;
+  }
+
+  #unknownHeading {
+    font-size: 34px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 650px) {
+  .unknownFlowerPic {
+    margin: 2% 0 5% 13%;
+  }
+
+  #unknownHeading {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 651px) and (max-width: 750px) {
+  .unknownFlowerPic {
+    margin: 2% 0 5% 16%;
+  }
+
+  #unknownHeading {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 785px) {
+  .unknownFlowerPic {
+    margin: 2% 0 5% 20%;
+  }
+}
+
+@media screen and (min-width: 786px) and (max-width: 900px) {
+  .unknownFlowerPic {
+    margin: 2% 22%;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1000){
+  .unknownFlowerPic {
+    margin: 2% 25%;
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1130px) {
+  .unknownFlowerPic {
+    margin: 2% 28%;
+  }
+}
+
+@media screen and (min-width: 1131px) and (max-width: 1230px) {
+  .unknownFlowerPic {
+    margin: 2% 30%;
+  }
+}
+
+@media screen and (min-width: 1231px) and (max-width: 1375px) {
+  .unknownFlowerPic {
+    margin: 2% 32%;
+  }
+}

@@ -140,10 +140,6 @@ MEDIA QUERIES
     margin: 0 10%;
   }
 
-  .topImgText {
-    font-size: 30px;
-  }
-
   #map {
     width: 350px;
   }
@@ -155,6 +151,10 @@ MEDIA QUERIES
   .secondaryTaxonomyPic {
     height: 255px;
     width: 255px;
+  }
+  
+  .topImgText {
+    font-size: 30px;
   }
 }
 
