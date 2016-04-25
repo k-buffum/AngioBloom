@@ -1,28 +1,4 @@
 /*****************************
-ALL FLOWERS PAGE
-******************************/
-
-.allFlowers {
-  display: inline-block;
-  margin: 5px 10px 10px 10px;
-}
-
-.allFlowersContainer {
-  text-align: center;
-}
-
-.flowerPics {
-  background-position: 50% 50%;
-  background-repeat: none;
-  background-size: cover;
-  float: left;
-  height: 350px;
-  position: relative;
-  width: 350px;
-}
-
-
-/*****************************
 GENERAL
 ******************************/
 
@@ -69,26 +45,6 @@ LOGIN/SIGNUP PAGE
 }
 
 .formContainer {
-  text-align: center;
-}
-
-
-
-/*****************************
-MY ACCOUNT PAGE
-******************************/
-
-.myPhoto {
-  background-position: 50% 50%;
-  background-repeat: none;
-  background-size: cover;
-  float: left;
-  height: 350px;
-  position: relative;
-  width: 350px;
-}
-
-.userInfo {
   text-align: center;
 }
 

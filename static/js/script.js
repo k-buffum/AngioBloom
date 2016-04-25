@@ -50,10 +50,10 @@ $(document).ready(function() {
   // My Account Page: delete function for images
   $(".delete-link").on("click", function(e) {
     e.preventDefault();
-    var userId = res.locals.currentUser.id;
+    // var userId = currentUser.id;
     var myUrl = $(this).attr("href");
     var photoOwner = $(this).attr("alt");
-    if (userId === photoOwner) {
+    if (photoOwner) {
       $.ajax({
         method: "DELETE",
         url: myUrl

@@ -1,0 +1,66 @@
+.allFlowers {
+  display: inline-block;
+  margin: 5px 10px 10px 10px;
+}
+
+.allFlowersContainer {
+  text-align: center;
+}
+
+.flowerPics {
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  float: left;
+  height: 350px;
+  position: relative;
+  width: 350px;
+}
+
+
+/*****************************
+MEDIA QUERIES
+******************************/
+
+@media screen and (max-width: 450px) {
+  .allFlowerH1 {
+    font-size: 32px;
+  }
+
+  .flowerPics {
+    height: 178px;
+    width: 178px;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 500px) {
+  .allFlowerH1 {
+    font-size: 34px;
+  }
+
+  .flowerPics {
+    height: 203px;
+    width: 203px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 600px) {
+  .flowerPics {
+    height: 228px;
+    width: 228px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 700px) {
+  .flowerPics {
+    height: 278px;
+    width: 278px;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 800px) {
+  .flowerPics {
+    height: 325px;
+    width: 325px;
+  }
+}

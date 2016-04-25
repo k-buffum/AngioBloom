@@ -72,7 +72,7 @@ router.get('/unknown/:id', function(req, res) {
     where: {
       id: req.params.id
     },
-    include: [db.flowerTaxonomy]
+    include: [db.flowerTaxonomy, db.user]
   }).then(function(photo) {
     res.render('unknown', {photo: photo, cloudinary, alerts: req.flash()});
   });

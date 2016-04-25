@@ -10,9 +10,13 @@
     <% for(var i = 0; i < photos.length; i++) { %>
       <% var imgUrl = cloudinary.url(photos[i].picture) %>
       <div class="allFlowers">
-        <div class="myPhoto" style="background-image:url(<%= imgUrl %>);"></div>
+        <div class="myPhoto" style="background-image:url(<%= imgUrl %>);">
+          <a href="/myaccount/flower/<%= photos[i].id %>" alt="<%= photos[i].userId %>" class="delete-link">
+            <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+        <br>
         <h3><%= photos[i].flowerTaxonomy.name ? photos[i].flowerTaxonomy.name : "Unknown" %></h3>
-        <button><a href="/myaccount/flower/<%= photos[i].id %>" alt="<%= photos[i].userId %>" class="delete-link">Delete</a></button>
       </div>
     <% } %>
   <% } else { %>

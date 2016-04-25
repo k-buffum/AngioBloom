@@ -1,0 +1,40 @@
+.allFlowers {
+  background-color: white;
+  border-radius: 3%;
+  box-shadow: 1px 1px 0px #aaa;
+  padding: 10px;
+}
+
+.myPhoto {
+  background-position: 50% 50%;
+  background-repeat: none;
+  background-size: cover;
+  float: left;
+  height: 350px;
+  margin-bottom: 15px;
+  position: relative;
+  width: 350px;
+}
+
+.myPhoto a {
+  background-color: rgba(225, 225, 225, 0.5);
+  border-radius: 12%;
+  color: red;
+  float: right;
+  margin: 3px 3px 0 0;
+  padding: 2px;
+}
+
+.userInfo {
+  text-align: center;
+}
+
+
+
+/*****************************
+MEDIA QUERIES
+******************************/
+
+@media screen and (max-width: 450px) {
+
+}
