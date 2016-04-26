@@ -1,4 +1,4 @@
-.allFlowers {
+.allFlowerTypes {
   display: inline-block;
   margin: 5px 10px 10px 10px;
 }
@@ -9,12 +9,22 @@
 
 .flowerPics {
   background-position: 50% 50%;
-  background-repeat: none;
   background-size: cover;
+  border-radius: 3%;
   float: left;
   height: 350px;
+  margin-bottom: 5px;
   position: relative;
   width: 350px;
+}
+
+.flowerPics h3 {
+  color: white;
+  background-color: rgba(51, 129, 199, 0.8);
+  margin-bottom: 5px;
+  margin-top: 85%;
+  padding-bottom: 2px;
+  padding-top: 2px;
 }
 
 
@@ -31,6 +41,10 @@ MEDIA QUERIES
     height: 178px;
     width: 178px;
   }
+
+  .flowerPics h3 {
+    margin-top: 75%;
+  }
 }
 
 @media screen and (min-width: 451px) and (max-width: 500px) {
@@ -41,6 +55,10 @@ MEDIA QUERIES
   .flowerPics {
     height: 203px;
     width: 203px;
+  }
+
+  .flowerPics h3 {
+    margin-top: 80%;
   }
 }
 

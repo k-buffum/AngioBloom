@@ -1,9 +1,4 @@
-<h1 class="heading">My Account</h1>
-
-<h2 class="userInfo">Username: <%= currentUser.username %></h2>
-<!-- <h2>Points: <%= currentUser.points ? currentUser.points : "0" %></h2> -->
-
-<h2 class="heading">My Flowers</h2>
+<h1 class="heading accountH1"><%= currentUser.username %>'s account</h1>
 
 <div class="allFlowersContainer">
   <% if (photos.length) { %>
@@ -15,7 +10,6 @@
             <i class="fa fa-times fa-2x" aria-hidden="true"></i>
           </a>
         </div>
-        <br>
         <h3><%= photos[i].flowerTaxonomy.name ? photos[i].flowerTaxonomy.name : "Unknown" %></h3>
       </div>
     <% } %>

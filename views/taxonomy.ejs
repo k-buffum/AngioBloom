@@ -1,7 +1,4 @@
-<div id="taxonomyMainContainer">
-  <h1 class="heading topImgText"><%= flower.name %> <%= flower.scientificName ? "(" + flower.scientificName + ")" : "" %></h1>
-  <div class="mainTaxonomyPic" style="background-image:url(<%= cloudinary.url(mostLikedPhoto.picture) %>);"></div>
-</div>
+<h1 class="heading topImgText"><%= flower.name %> <%= flower.scientificName ? "(" + flower.scientificName + ")" : "" %></h1>
 
 <div id="scientificNamesContainer">
   <% if (flower.order) { %>

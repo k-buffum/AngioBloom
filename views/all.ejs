@@ -5,12 +5,9 @@
     <%  var imgUrl = cloudinary.url(flowers[i].flowerPhotos[0]) ? cloudinary.url(flowers[i].flowerPhotos[0].picture) : false %>
     <% if (flowers[i].name !== '') { %>
       <% if (imgUrl) { %>
-        <div class="allFlowers">
+        <div class="allFlowerTypes">
           <a href="/flower/<%= flowers[i].name %>">
-            <div class="mainFlowerName">
-              <h3><%= flowers[i].name %></h3>
-            </div>
-            <div class="flowerPics" style="background-image:url(<%= imgUrl %>);"></div>
+            <div class="flowerPics" style="background-image:url(<%= imgUrl %>);"><h3><%= flowers[i].name %></h3></div>
           </a>
         </div>
       <% } %>

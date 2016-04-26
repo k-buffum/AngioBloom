@@ -1,13 +1,19 @@
+.accountH1 {
+  margin-bottom: 22px;
+  margin-top: 18px;
+}
+
 .allFlowers {
   background-color: white;
   border-radius: 3%;
   box-shadow: 1px 1px 0px #aaa;
+  display: inline-block;
+  margin: 5px 10px 10px 10px;
   padding: 10px;
 }
 
 .myPhoto {
   background-position: 50% 50%;
-  background-repeat: none;
   background-size: cover;
   float: left;
   height: 350px;
@@ -25,6 +31,10 @@
   padding: 2px;
 }
 
+.userPhotoLikes {
+  margin-right: 25%;
+}
+
 .userInfo {
   text-align: center;
 }
@@ -36,5 +46,72 @@ MEDIA QUERIES
 ******************************/
 
 @media screen and (max-width: 450px) {
+  .accountH1 {
+    font-size: 30px;
+  }
 
+  .allFlowers {
+    padding: 5px;
+  } 
+
+  .allFlowers h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  } 
+
+  .myPhoto {
+    height: 150px;
+    margin-bottom: 5px;
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 451px) and (max-width: 550px) {
+  .accountH1 {
+    font-size: 32px;
+  }
+
+  .allFlowers {
+    padding: 8px;
+  }
+
+  .allFlowers h3 {
+    margin-bottom: 8px;
+  }
+
+  .myPhoto {
+    height: 180px;
+    margin-bottom: 8px;
+    width: 180px;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 650px) {
+  .accountH1 {
+    font-size: 34px;
+  }
+
+  .allFlowers h3 {
+    margin-bottom: 10px;
+  }
+
+  .myPhoto {
+    height: 232px;
+    margin-bottom: 10px;
+    width: 232px;
+  }
+}
+
+@media screen and (min-width: 651px) and (max-width: 750px) {
+  .myPhoto {
+    height: 272px;
+    width: 272px;
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 850px) {
+  .myPhoto {
+    height: 325px;
+    width: 325px;
+  }
 }

@@ -14,10 +14,8 @@
       <% if (imgUrl) { %>
         <div class="flowerTypes">
           <a href="/flower/<%= flowers[i].name %>">
-            <div class="mainFlowerName">
-              <h3><%= flowers[i].name %></h3>
-            </div>
-            <div class="mainFlower" style="background-image:url(<%= imgUrl %>);"></div>
+
+            <div class="mainFlower" style="background-image:url(<%= imgUrl %>);"><h3><%= flowers[i].name %></h3></div>
             <!-- <img src="<%= imgUrl %>" class="mainFlower"> -->
           </a>
         </div>
@@ -25,12 +23,15 @@
     <% } %> 
   <% } %>
 </div>
-<a href="/flower"><button id="allFlowers">View All Flowers</button></a> 
-
+<div id="allFlowers">
+  <a href="/flower">
+    <button id="allFlowersBtn">View All Flowers</button>
+  </a> 
+</div>
 
 <h2 class="heading" id="unknownH2">Can you identify these flowers?</h2>
 
-<div class="flowerContainer">
+<div class="flowerContainer" id="unknownContainer">
   <% flowers.forEach(function(flower){ %>
     <% if (flower.name == '') { %>
       <% for(var i = 0; i < flower.flowerPhotos.length; i++) { %>

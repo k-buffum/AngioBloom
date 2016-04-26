@@ -1,24 +1,37 @@
+.fa-flag {
+  margin-right: 25%;
+}
+
+#flowerInfo {
+  margin-right: 8%;
+}
+
 .flowerInfoContainer {
   display: inline-block;
-  margin: 1% 3%;
+  padding-left: 2%;
 }
 
 .flowerPictures {
+  background-color: white;
+  border: 10px solid white;
+  box-shadow: 1px 1px 0px #aaa;
+  border-radius: 3%;
   margin: 2% 1.8%;
 }
 
 #infoMapContainer {
-  margin: 0 15%;
+  margin: 4% 15% 0;
 }
 
 .likeBtn {
   color: pink;
 }
 
-.mainTaxonomyPic, .secondaryTaxonomyPic {
+.secondaryTaxonomyPic {
   background-position: 50% 50%;
-  background-repeat: none;
   background-size: cover;
+  border: 15px solid white;
+  border-radius: 3%;
   float: left;
   height: 450px;
   position: relative;
@@ -27,18 +40,19 @@
 
 #map {
   max-width: 450px;
-  clear: right;
 }
 
 #photoContainers {
   text-align: center;
 }
 
+.secondaryTaxonomyPic {
+  margin-bottom: 10px;
+}
+
 .scientificNames {
-  display: inline-block;
-  margin: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
+  display: inline-block; 
+  margin: 0 20px;
 }
 
 #scientificNamesContainer {
@@ -46,7 +60,7 @@
 }
 
 .topImgText {
-  background-color: rgba(13, 103, 157, 1);
+  background-color: rgba(13, 103, 157, 0.7);
   color: white;
   margin-bottom: 0px;
   margin-top: 0px;
@@ -61,18 +75,36 @@ MEDIA QUERIES
 ******************************/
 
 @media screen and (max-width: 450px) {
+  .fa {
+    font-size: small;
+  }
+
+  .fa-flag {
+    margin: 0px;
+  }
+
+  #flowerInfo {
+    margin: 0 0 30px 0;
+  }
+
   .flowerInfoContainer {
-    margin: 0;
+    margin: 0px;
     text-align: center;
   }
 
-  .mainTaxonomyPic {
-    height: 400px;
-    width: 400px;
+  .flowerPictures {
+    border: 0px;
+  }
+
+  .flowerPictures h3 {
+    font-size: 16px;
+    width: 150px;
   }
 
   #map {
+    margin: 0px;
     max-width: 250px;
+    padding-bottom: 0px;
   }
 
   .scientificNames h2 {
@@ -80,22 +112,33 @@ MEDIA QUERIES
   }
 
   .secondaryTaxonomyPic {
-    height: 300px;
-    width: 300px;
+    height: 150px;
+    margin: 0px;
+    width: 150px;
   }
 }
 
 @media screen and (min-width: 451px) and (max-width: 500px) {
+  .fa-flag {
+    margin: 0px;
+  }
+
   #flowerInfo h4 {
     font-size: 20px;
   }
 
-  #infoMapContainer {
-    margin: 0 2%;
-    text-align: center;
+  .flowerPictures {
+    border: 0px;
+  }
+
+  .flowerPictures h3 {
+    font-size: 20px;
+    max-width: 205px;
   }
 
   #map {
+    margin: 15px 0px;
+    padding-bottom: 0px;
     width: 300px;
   }
 
@@ -111,13 +154,23 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 501px) and (max-width: 550px) {
-  #infoMapContainer {
-    margin: 0;
-    text-align: center;
+  .fa-flag {
+    margin: 0px;
+  }
+
+  .flowerPictures {
+    border: 0px;
+  }
+
+  .flowerPictures h3 {
+    max-width: 230px;
   }
 
   #map {
-    max-width: 400px;
+    margin-left: -20px;
+    margin-top: 10px;
+    max-width: 350px;
+    padding: 0px;
   }
 
   .secondaryTaxonomyPic {
@@ -127,20 +180,26 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 551px) and (max-width: 600px) {
+  .fa-flag {
+    margin-right: 10%;
+  }
+
   #flowerInfo h4 {
     font-size: 18px;
   }
 
-  .flowerPictures h3 {
-    font-size: 18px;
+  .flowerPictures {
+    border: 0px;
   }
 
-  #infoMapContainer {
-    text-align: center;
-    margin: 0 10%;
+  .flowerPictures h3 {
+    font-size: 20px;
+    max-width: 255px;
   }
 
   #map {
+    margin-top: 10px;
+    padding-bottom: 0px;
     width: 350px;
   }
 
@@ -159,12 +218,26 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 601px) and (max-width: 650px) {
+  .fa-flag {
+    margin-right: 10%;
+  }
+
   #flowerInfo h4 {
     font-size: 20px;
   }
 
-  #infoMapContainer {
-    display: inline-block;
+  .flowerPictures {
+    border: 0px;
+  }
+
+  .flowerPictures h3 {
+    max-width: 275px;
+  }
+
+  #map {
+    margin: 10px 0 0 -20px;
+    padding: 0px;
+    width: 400px;
   }
 
   .secondaryTaxonomyPic {
@@ -174,6 +247,23 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 651px) and (max-width: 700px) {
+  .fa-flag {
+    margin-right: 10%;
+  }
+
+  .flowerPictures {
+    border: 0px;
+  }
+
+  .flowerPictures h3 {
+    max-width: 300px;
+  }
+
+  #map {
+    margin: 15px 0 0 -18px;
+    padding: 0px;
+  }
+
   .scientificNames h2 {
     font-size: 30px;
   }
@@ -185,28 +275,35 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 701px) and (max-width: 750px) {
+  .fa-flag {
+    margin-right: 10%;
+  }
+
+  #flowerInfo {
+    margin-right: 0px;
+  }
+
   .flowerInfoContainer {
     width: 40%;
   }
 
   .flowerPictures {
+    border: 0px;
     margin-left: 5%;
   }
 
+  .flowerPictures h3 {
+    max-width: 295px;
+  }
+
   #infoMapContainer {
-    margin: 0 5%;
+    margin: 4% 5% 0;
   }
 
   #map {
     margin-top: -140px;
+    padding-bottom: 18%;
     width: 300px;
-  }
-
-  .scientificNames {
-    display: inline-block;
-    margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 
   .scientificNames h2 {
@@ -219,87 +316,65 @@ MEDIA QUERIES
   }
 }
 
-@media screen and (min-width: 751px) {
+@media screen and (min-width: 751px) and (max-width: 1050px) {
+  .fa-flag {
+    margin-right: 18%;
+  }
+
   .flowerInfoContainer {
     margin: 1% 2%;
     max-width: 300px;
+  }
+
+  #flowerInfo {
+    margin: 0px;
   }
 
   #flowerInfo h4 {
     font-size: 16px;
   }
 
-  #infoMapContainer {
-    margin: 0;
+  .flowerPictures {
+    border: 0px;
   }
 
-  .mainTaxonomyPic {
-    float: left;
-    margin-left: 2%;
-    margin-top: 2%;
-    max-width: 100%;
-    overflow: hidden;
+  #infoMapContainer {
+    margin: 4% 4% 0;
   }
 
   #map {
+    margin-top: -45%;
     max-width: 350px;
-  }
-
-  #scientificNamesContainer {
-    margin-bottom: 15%;
-    margin-top: 10%;
-  }
-
-  #scientificNamesContainer div {
-    display: block;
-    margin: 5% 0;
-  }
-
-  #scientificNamesContainer div h2 {
-    display: inline-block;
-    margin-right: 15px;
+    padding: 0px;
   }
 
   .secondaryTaxonomyPic {
-    height: 350px;
-    width: 350px;
-  }
-
-  #taxonomyMainContainer {
-    margin: 0;
+    height: 342px;
+    width: 342px;
   }
 }
 
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 855px) and (max-width: 1050px) {
   .flowerInfoContainer {
     max-width: 365px;
   }
 
-  #scientificNamesContainer {
-    margin-bottom: 15%;
-  }
-}
-
-@media screen and (min-width: 950px) {
-  #flowerInfo {
-    max-width: 300px;
+  #map {
+    margin: -20% 0 0 0;
   }
 
   #infoMapContainer {
-    margin: 0 12%;
-  }
-
-  .mainTaxonomyPic {
-    margin-left: 12%;
-  }
-
-  #scientificNamesContainer {
-    margin-top: 7%;
-    margin-bottom: 15%;
+    margin: 4% 5% 0;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 930px) and (max-width: 1050px) {
+  #infoMapContainer {
+    margin: 4% 9% 0;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1050px) {
   #flowerInfo {
     max-width: 500px;
   }
@@ -308,32 +383,37 @@ MEDIA QUERIES
     font-size: 18px;
   }
 
-  #infoMapContainer {
-    margin: 0 3%;
-  }
-
   #map {
     max-width: 400px;
   }
+}
 
-  #scientificNamesContainer {
-    margin-bottom: 7%;
+@media screen and (min-width: 1051px) and (max-width: 1210px) {
+  #flowerInfo {
+    margin: 0px;
+  }
+
+ .flowerInfoContainer {
+    margin: 0px;
+  }
+
+  #infoMapContainer {
+    margin: 6% 8% 0;
   }
 }
 
-@media screen and (min-width: 1114px) {
+@media screen and (min-width: 1211px) and (max-width: 1330px) {
   #infoMapContainer {
-    margin: 0 8%;
+      margin: 4% 8% 0;
   }
 }
 
-@media screen and (min-width: 1317px) {
-  #infoMapContainer {
-    margin: 0 13%;
+@media screen and (min-width: 1331px) and (max-width: 1390px) {
+  #flowerInfo {
+    margin: 0 3%;
   }
 
-  #scientificNamesContainer {
-    margin-bottom: 10%;
-    margin-top: 5%;
+  #infoMapContainer {
+    margin: 4% 12% 0;
   }
 }
