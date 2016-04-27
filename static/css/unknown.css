@@ -4,6 +4,7 @@
   background-size: cover;
   border: 10px solid;
   border-radius: 3%;
+  box-shadow: 1px 1px 0px #aaa;
   float: left;
   height: 450px;
   margin: 2% 34%;
@@ -54,7 +55,9 @@ MEDIA QUERIES
 
 @media screen and (min-width: 451px) and (max-width: 500px) {
   .unknownFlowerPic {
-    margin: 2% 0 5% 0;
+    height: 425px;
+    margin: 2% 5% 5%;
+    width: 425px;
   }
 
   #unknownHeading {
@@ -122,7 +125,7 @@ MEDIA QUERIES
   }
 }
 
-@media screen and (min-width: 901px) and (max-width: 1000){
+@media screen and (min-width: 901px) and (max-width: 1000px){
   .unknownFlowerPic {
     margin: 2% 25%;
   }

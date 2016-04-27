@@ -86,7 +86,7 @@ LOGIN/SIGNUP PAGE
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 435px) {
   #signupHead {
     font-size: 30px;
   }
