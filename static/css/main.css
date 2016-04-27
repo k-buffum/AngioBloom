@@ -121,25 +121,6 @@ LOGIN/SIGNUP PAGE
 UPLOAD PAGE
 ******************************/
 
-/*#firstQuestions {
-  display: inline-block;
-  margin-top: 1%;
-  text-align: center;
-}
-
-#imgPreview{
-  height: 400px;
-  width: 500px;
-}
-
-.imgUpload {
-  float: left;
-}
-
-#imgUpload {
-  padding-left: 50%;
-}*/
-
 .thumb-image {
   max-width: 100%;
 }
@@ -159,4 +140,62 @@ UPLOAD PAGE
 
 .uploadQuestions {
   margin: 10px;
+}
+
+#uploadQuestionsContainer {
+  background-color: rgba(13, 103, 157, 0.7);
+  border: 5px solid white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #aaa;
+  margin: 2% 30%;
+  padding: 1% 5%;
+  text-align: center;
+}
+
+@media screen and (max-width: 503px) {
+  #uploadQuestionsContainer {
+    margin: 2% 0 0 0;
+  }
+}
+
+@media screen and (min-width: 504px) and (max-width: 582px) {
+  #uploadQuestionsContainer {
+    margin: 2% 5%;
+  }
+}
+
+@media screen and (min-width: 583px) and (max-width: 666px) {
+  #uploadQuestionsContainer {
+    margin: 2% 10%;
+  }
+}
+
+@media screen and (min-width: 667px) and (max-width: 802px) {
+  #uploadQuestionsContainer {
+    margin: 2% 15%;
+  }
+}
+
+@media screen and (min-width: 803px) and (max-width: 1005px) {
+  #uploadQuestionsContainer {
+    margin: 2% 20%;
+  }
+}
+
+@media screen and (min-width: 1006px) and (max-width: 1177px) {
+  #uploadQuestionsContainer {
+    margin: 2% 25%;
+  }
+}
+
+@media screen and (min-width: 1178px) and (max-width: 1341px) {
+  #uploadQuestionsContainer {
+    margin: 2% 28%;
+  }
+}
+
+@media screen and (min-width: 1342px) {
+  #uploadQuestionsContainer {
+    margin: 2% 30%;
+  }
 }
