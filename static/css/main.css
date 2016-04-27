@@ -1,4 +1,31 @@
 /*****************************
+ERROR PAGE
+******************************/
+
+#errorPage {
+  background-color: rgba(13, 103, 157, 0.7);
+  border: 5px solid white;
+  border-radius: 3%;
+  font-variant: small-caps;
+  font-weight: 400;
+  margin: 2% 33% 0;
+  padding: 2%;
+}
+
+@media screen and (max-width: 535px) {
+  #errorPage {
+    margin: 2% 15% 0;
+  }
+}
+
+@media screen and (min-width: 535px) and (max-width: 824px) {
+ #errorPage {
+  margin: 2% 25% 0;
+ }
+}
+
+
+/*****************************
 GENERAL
 ******************************/
 
@@ -42,13 +69,52 @@ LOGIN/SIGNUP PAGE
 ******************************/
 
 .email, .password, #username {
-  width: 50%;
+  width: 100%;
 }
 
 .formContainer {
+  background-color: rgba(13, 103, 157, 0.7);
+  border: 5px solid white;
+  border-radius: 3%;
+  box-shadow: 1px 1px 5px #aaa;
+  margin: 0 33%;
+  padding: 1% 5%;
   text-align: center;
 }
 
+.pgHead {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 430px) {
+  #signupHead {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  .formContainer {
+    margin: 0 10%;
+  }
+}
+
+@media screen and (min-width: 650px) and (max-width: 824px) {
+  .formContainer {
+    margin: 0 20%;
+  }
+}
+
+@media screen and (min-width: 825px) and (max-width: 999px) {
+  .formContainer {
+    margin: 0 25%;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1210px) {
+  .formContainer {
+    margin: 0 28%;
+  }
+}
 
 
 /*****************************
