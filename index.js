@@ -25,7 +25,7 @@ app.use(session({
 
 app.use(function(req, res, next) {
   //remove later
-  // req.session.userId = 1;
+  req.session.userId = 1;
 
   if(req.session.userId) {
     db.user.findById(req.session.userId).then(function(user) {

@@ -111,8 +111,8 @@ MEDIA QUERIES
 
 @media screen and (min-width: 451px) and (max-width: 500px) {
   .flowerTypes, .unknownFlowers {
-    height: 220px;
-    width: 220px;
+    height: 214px;
+    width: 214px;
   }
 
   #homeH1 {
@@ -124,13 +124,13 @@ MEDIA QUERIES
   }
 
   .mainFlower {
-    height: 215px;
-    width: 215px;
+    height: 209px;
+    width: 209px;
   }
 
   .mainFlower:hover {
-    height: 220px;
-    width: 220px;
+    height: 214px;
+    width: 214px;
   }
 
   .mainFlower h3 {
@@ -145,8 +145,8 @@ MEDIA QUERIES
 
 @media screen and (min-width: 501px) and (max-width: 550px) {
   .flowerTypes, .unknownFlowers {
-    height: 243px;
-    width: 243px;
+    height: 237px;
+    width: 237px;
   }
 
   #homeH1 {
@@ -158,13 +158,13 @@ MEDIA QUERIES
   }
 
   .mainFlower {
-    height: 238px;
-    width: 238px;
+    height: 233px;
+    width: 233px;
   }
 
   .mainFlower:hover {
-    height: 243px;
-    width: 243px;
+    height: 237px;
+    width: 237px;
   }
 
   #unknownH2 {
@@ -174,8 +174,8 @@ MEDIA QUERIES
 
 @media screen and (min-width: 551px) and (max-width: 600px) {
   .flowerTypes, .unknownFlowers {
-    height: 269px;
-    width: 269px;
+    height: 263px;
+    width: 263px;
   }
 
   #homeH1 {
@@ -187,20 +187,20 @@ MEDIA QUERIES
   }
 
   .mainFlower {
-    height: 264px;
-    width: 264px;
+    height: 258px;
+    width: 258px;
   }
 
   .mainFlower:hover {
-    height: 269px;
-    width: 269px;
+    height: 263px;
+    width: 263px;
   }
 }
 
 @media screen and (min-width: 601px) and (max-width: 650px) {
   .flowerTypes, .unknownFlowers {
-    height: 293px;
-    width: 293px;
+    height: 287px;
+    width: 287px;
   }
 
   #homeH2 {
@@ -208,20 +208,20 @@ MEDIA QUERIES
   }
 
   .mainFlower {
-    height: 288px;
-    width: 288px;
+    height: 282px;
+    width: 282px;
   }
 
   .mainFlower:hover {
-    height: 293px;
-    width: 293px;
+    height: 287px;
+    width: 287px;
   }
 }
 
 @media screen and (min-width: 651px) and (max-width: 700px) {
   .flowerTypes, .unknownFlowers {
-    height: 320px;
-    width: 320px;
+    height: 312px;
+    width: 312px;
   }
 
   #homeH2 {
@@ -229,63 +229,69 @@ MEDIA QUERIES
   }
 
   .mainFlower {
-    height: 315px;
-    width: 315px;
+    height: 307px;
+    width: 307px;
   }
 
   .mainFlower:hover {
-    height: 320px;
-    width: 320px;
+    height: 312px;
+    width: 312px;
   }
 }
 
 @media screen and (min-width: 701px) and (max-width: 750px) {
   .flowerTypes, .unknownFlowers {
-    height: 348px;
-    width: 348px;
-  }
-
-  .mainFlower {
     height: 338px;
     width: 338px;
   }
 
+  .mainFlower {
+    height: 328px;
+    width: 328px;
+  }
+
   .mainFlower:hover {
-    height: 348px;
-    width: 348px;
+    height: 338px;
+    width: 338px;
   }
 }
 
 @media screen and (min-width: 751px) and (max-width: 800px) {
   .flowerTypes, .unknownFlowers {
-    height: 372px;
-    width: 372px;
-  }
-
-  .mainFlower {
     height: 362px;
     width: 362px;
   }
 
+  .mainFlower {
+    height: 352px;
+    width: 352px;
+  }
+
   .mainFlower:hover {
-    height: 372px;
-    width: 372px;
+    height: 362px;
+    width: 362px;
   }
 }
 
 @media screen and (min-width: 801px) and (max-width: 850px) {
   .flowerTypes, .unknownFlowers {
-    height: 398px;
-    width: 398px;
-  }
-
-  .mainFlower {
     height: 388px;
     width: 388px;
   }
 
+  .mainFlower {
+    height: 378px;
+    width: 378px;
+  }
+
   .mainFlower:hover {
-    height: 398px;
-    width: 398px;
+    height: 388px;
+    width: 388px;
+  }
+}
+
+@media screen and (max-width: 1265px) {
+  .flowerTypes:nth-child(5), .flowerTypes:nth-child(6) {
+    display: none;
   }
 }
