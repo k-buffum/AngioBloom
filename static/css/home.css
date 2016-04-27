@@ -77,6 +77,11 @@ MEDIA QUERIES
 ************************/
 
 @media screen and (max-width: 450px) {
+  .flowerTypes, .unknownFlowers {
+    height: 185px;
+    width: 185px;
+  }
+
   #homeH1 {
     font-size: 25px;
   }
@@ -90,6 +95,11 @@ MEDIA QUERIES
     width: 180px;
   }
 
+  .mainFlower:hover {
+    height: 185px;
+    width: 185px;
+  }
+
   .mainFlower h3 {
     margin-top: 75%;
   }
@@ -100,6 +110,11 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 451px) and (max-width: 500px) {
+  .flowerTypes, .unknownFlowers {
+    height: 220px;
+    width: 220px;
+  }
+
   #homeH1 {
     font-size: 30px;
   }
@@ -113,6 +128,11 @@ MEDIA QUERIES
     width: 215px;
   }
 
+  .mainFlower:hover {
+    height: 220px;
+    width: 220px;
+  }
+
   .mainFlower h3 {
     margin-top: 80%;
   }
@@ -124,6 +144,11 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 501px) and (max-width: 550px) {
+  .flowerTypes, .unknownFlowers {
+    height: 243px;
+    width: 243px;
+  }
+
   #homeH1 {
     font-size: 32px;
   }
@@ -137,12 +162,22 @@ MEDIA QUERIES
     width: 238px;
   }
 
+  .mainFlower:hover {
+    height: 243px;
+    width: 243px;
+  }
+
   #unknownH2 {
     font-size: 28px;
   }
 }
 
 @media screen and (min-width: 551px) and (max-width: 600px) {
+  .flowerTypes, .unknownFlowers {
+    height: 269px;
+    width: 269px;
+  }
+
   #homeH1 {
     font-size: 34px;
   }
@@ -155,9 +190,19 @@ MEDIA QUERIES
     height: 264px;
     width: 264px;
   }
+
+  .mainFlower:hover {
+    height: 269px;
+    width: 269px;
+  }
 }
 
 @media screen and (min-width: 601px) and (max-width: 650px) {
+  .flowerTypes, .unknownFlowers {
+    height: 293px;
+    width: 293px;
+  }
+
   #homeH2 {
     font-size: 26px;
   }
@@ -166,9 +211,19 @@ MEDIA QUERIES
     height: 288px;
     width: 288px;
   }
+
+  .mainFlower:hover {
+    height: 293px;
+    width: 293px;
+  }
 }
 
 @media screen and (min-width: 651px) and (max-width: 700px) {
+  .flowerTypes, .unknownFlowers {
+    height: 320px;
+    width: 320px;
+  }
+
   #homeH2 {
     font-size: 28px;
   }
@@ -177,25 +232,60 @@ MEDIA QUERIES
     height: 315px;
     width: 315px;
   }
+
+  .mainFlower:hover {
+    height: 320px;
+    width: 320px;
+  }
 }
 
 @media screen and (min-width: 701px) and (max-width: 750px) {
+  .flowerTypes, .unknownFlowers {
+    height: 348px;
+    width: 348px;
+  }
+
   .mainFlower {
     height: 338px;
     width: 338px;
   }
+
+  .mainFlower:hover {
+    height: 348px;
+    width: 348px;
+  }
 }
 
 @media screen and (min-width: 751px) and (max-width: 800px) {
+  .flowerTypes, .unknownFlowers {
+    height: 372px;
+    width: 372px;
+  }
+
   .mainFlower {
     height: 362px;
     width: 362px;
   }
+
+  .mainFlower:hover {
+    height: 372px;
+    width: 372px;
+  }
 }
 
 @media screen and (min-width: 801px) and (max-width: 850px) {
+  .flowerTypes, .unknownFlowers {
+    height: 398px;
+    width: 398px;
+  }
+
   .mainFlower {
     height: 388px;
     width: 388px;
+  }
+
+  .mainFlower:hover {
+    height: 398px;
+    width: 398px;
   }
 }
